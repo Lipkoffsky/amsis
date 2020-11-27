@@ -1,0 +1,1161 @@
+TimeQuest Timing Analyzer report for mpsis_shokiri_2
+Sat Nov 21 14:28:42 2020
+Quartus II 64-Bit Version 13.0.1 Build 232 06/12/2013 Service Pack 1 SJ Web Edition
+
+
+---------------------
+; Table of Contents ;
+---------------------
+  1. Legal Notice
+  2. TimeQuest Timing Analyzer Summary
+  3. Parallel Compilation
+  4. Clocks
+  5. Slow Model Fmax Summary
+  6. Slow Model Setup Summary
+  7. Slow Model Hold Summary
+  8. Slow Model Recovery Summary
+  9. Slow Model Removal Summary
+ 10. Slow Model Minimum Pulse Width Summary
+ 11. Slow Model Setup: 'clk'
+ 12. Slow Model Hold: 'clk'
+ 13. Slow Model Minimum Pulse Width: 'clk'
+ 14. Setup Times
+ 15. Hold Times
+ 16. Clock to Output Times
+ 17. Minimum Clock to Output Times
+ 18. Fast Model Setup Summary
+ 19. Fast Model Hold Summary
+ 20. Fast Model Recovery Summary
+ 21. Fast Model Removal Summary
+ 22. Fast Model Minimum Pulse Width Summary
+ 23. Fast Model Setup: 'clk'
+ 24. Fast Model Hold: 'clk'
+ 25. Fast Model Minimum Pulse Width: 'clk'
+ 26. Setup Times
+ 27. Hold Times
+ 28. Clock to Output Times
+ 29. Minimum Clock to Output Times
+ 30. Multicorner Timing Analysis Summary
+ 31. Setup Times
+ 32. Hold Times
+ 33. Clock to Output Times
+ 34. Minimum Clock to Output Times
+ 35. Setup Transfers
+ 36. Hold Transfers
+ 37. Report TCCS
+ 38. Report RSKM
+ 39. Unconstrained Paths
+ 40. TimeQuest Timing Analyzer Messages
+
+
+
+----------------
+; Legal Notice ;
+----------------
+Copyright (C) 1991-2013 Altera Corporation
+Your use of Altera Corporation's design tools, logic functions 
+and other software and tools, and its AMPP partner logic 
+functions, and any output files from any of the foregoing 
+(including device programming or simulation files), and any 
+associated documentation or information are expressly subject 
+to the terms and conditions of the Altera Program License 
+Subscription Agreement, Altera MegaCore Function License 
+Agreement, or other applicable license agreement, including, 
+without limitation, that your use is for the sole purpose of 
+programming logic devices manufactured by Altera and sold by 
+Altera or its authorized distributors.  Please refer to the 
+applicable agreement for further details.
+
+
+
++----------------------------------------------------------------------------------------+
+; TimeQuest Timing Analyzer Summary                                                      ;
++--------------------+-------------------------------------------------------------------+
+; Quartus II Version ; Version 13.0.1 Build 232 06/12/2013 Service Pack 1 SJ Web Edition ;
+; Revision Name      ; mpsis_shokiri_2                                                   ;
+; Device Family      ; Cyclone II                                                        ;
+; Device Name        ; EP2C20F484C7                                                      ;
+; Timing Models      ; Final                                                             ;
+; Delay Model        ; Combined                                                          ;
+; Rise/Fall Delays   ; Unavailable                                                       ;
++--------------------+-------------------------------------------------------------------+
+
+
+Parallel compilation was disabled, but you have multiple processors available. Enable parallel compilation to reduce compilation time.
++-------------------------------------+
+; Parallel Compilation                ;
++----------------------------+--------+
+; Processors                 ; Number ;
++----------------------------+--------+
+; Number detected on machine ; 4      ;
+; Maximum allowed            ; 1      ;
++----------------------------+--------+
+
+
++---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Clocks                                                                                                                                                                          ;
++------------+------+--------+------------+-------+-------+------------+-----------+-------------+-------+--------+-----------+------------+----------+--------+--------+---------+
+; Clock Name ; Type ; Period ; Frequency  ; Rise  ; Fall  ; Duty Cycle ; Divide by ; Multiply by ; Phase ; Offset ; Edge List ; Edge Shift ; Inverted ; Master ; Source ; Targets ;
++------------+------+--------+------------+-------+-------+------------+-----------+-------------+-------+--------+-----------+------------+----------+--------+--------+---------+
+; clk        ; Base ; 1.000  ; 1000.0 MHz ; 0.000 ; 0.500 ;            ;           ;             ;       ;        ;           ;            ;          ;        ;        ; { clk } ;
++------------+------+--------+------------+-------+-------+------------+-----------+-------------+-------+--------+-----------+------------+----------+--------+--------+---------+
+
+
++--------------------------------------------------+
+; Slow Model Fmax Summary                          ;
++------------+-----------------+------------+------+
+; Fmax       ; Restricted Fmax ; Clock Name ; Note ;
++------------+-----------------+------------+------+
+; 209.78 MHz ; 209.78 MHz      ; clk        ;      ;
++------------+-----------------+------------+------+
+This panel reports FMAX for every clock in the design, regardless of the user-specified clock periods.  FMAX is only computed for paths where the source and destination registers or ports are driven by the same clock.  Paths of different clocks, including generated clocks, are ignored.  For paths between a clock and its inversion, FMAX is computed as if the rising and falling edges are scaled along with FMAX, such that the duty cycle (in terms of a percentage) is maintained. Altera recommends that you always use clock constraints and other slack reports for sign-off analysis.
+
+
++--------------------------------+
+; Slow Model Setup Summary       ;
++-------+--------+---------------+
+; Clock ; Slack  ; End Point TNS ;
++-------+--------+---------------+
+; clk   ; -3.767 ; -173.233      ;
++-------+--------+---------------+
+
+
++-------------------------------+
+; Slow Model Hold Summary       ;
++-------+-------+---------------+
+; Clock ; Slack ; End Point TNS ;
++-------+-------+---------------+
+; clk   ; 1.061 ; 0.000         ;
++-------+-------+---------------+
+
+
+-------------------------------
+; Slow Model Recovery Summary ;
+-------------------------------
+No paths to report.
+
+
+------------------------------
+; Slow Model Removal Summary ;
+------------------------------
+No paths to report.
+
+
++----------------------------------------+
+; Slow Model Minimum Pulse Width Summary ;
++-------+--------+-----------------------+
+; Clock ; Slack  ; End Point TNS         ;
++-------+--------+-----------------------+
+; clk   ; -1.631 ; -74.951               ;
++-------+--------+-----------------------+
+
+
++------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Slow Model Setup: 'clk'                                                                                                                              ;
++--------+-----------------------------------+-----------------------------------+--------------+-------------+--------------+------------+------------+
+; Slack  ; From Node                         ; To Node                           ; Launch Clock ; Latch Clock ; Relationship ; Clock Skew ; Data Delay ;
++--------+-----------------------------------+-----------------------------------+--------------+-------------+--------------+------------+------------+
+; -3.767 ; ControlUnit:inst|ControlBus_o[13] ; RALU:inst4|RON[4][3]              ; clk          ; clk         ; 1.000        ; -0.002     ; 4.803      ;
+; -3.750 ; ControlUnit:inst|ControlBus_o[13] ; RALU:inst4|RON[0][3]              ; clk          ; clk         ; 1.000        ; 0.000      ; 4.788      ;
+; -3.697 ; RALU:inst4|RgA[2]                 ; RALU:inst4|RON[4][3]              ; clk          ; clk         ; 1.000        ; -0.001     ; 4.734      ;
+; -3.680 ; RALU:inst4|RgA[2]                 ; RALU:inst4|RON[0][3]              ; clk          ; clk         ; 1.000        ; 0.001      ; 4.719      ;
+; -3.677 ; RALU:inst4|RgA[1]                 ; RALU:inst4|RON[4][3]              ; clk          ; clk         ; 1.000        ; -0.001     ; 4.714      ;
+; -3.660 ; RALU:inst4|RgA[1]                 ; RALU:inst4|RON[0][3]              ; clk          ; clk         ; 1.000        ; 0.001      ; 4.699      ;
+; -3.623 ; ControlUnit:inst|ControlBus_o[13] ; RALU:inst4|RON[2][3]              ; clk          ; clk         ; 1.000        ; -0.005     ; 4.656      ;
+; -3.622 ; ControlUnit:inst|ControlBus_o[13] ; RALU:inst4|RON[3][3]              ; clk          ; clk         ; 1.000        ; -0.005     ; 4.655      ;
+; -3.605 ; ControlUnit:inst|ControlBus_o[13] ; FAP:inst2|inst2                   ; clk          ; clk         ; 1.000        ; 0.000      ; 4.643      ;
+; -3.553 ; RALU:inst4|RgA[2]                 ; RALU:inst4|RON[2][3]              ; clk          ; clk         ; 1.000        ; -0.004     ; 4.587      ;
+; -3.552 ; RALU:inst4|RgA[2]                 ; RALU:inst4|RON[3][3]              ; clk          ; clk         ; 1.000        ; -0.004     ; 4.586      ;
+; -3.551 ; ControlUnit:inst|ControlBus_o[14] ; RALU:inst4|RON[4][3]              ; clk          ; clk         ; 1.000        ; -0.002     ; 4.587      ;
+; -3.537 ; RALU:inst4|RgB[0]                 ; RALU:inst4|RON[4][3]              ; clk          ; clk         ; 1.000        ; -0.002     ; 4.573      ;
+; -3.535 ; RALU:inst4|RgA[2]                 ; FAP:inst2|inst2                   ; clk          ; clk         ; 1.000        ; 0.001      ; 4.574      ;
+; -3.534 ; ControlUnit:inst|ControlBus_o[14] ; RALU:inst4|RON[0][3]              ; clk          ; clk         ; 1.000        ; 0.000      ; 4.572      ;
+; -3.533 ; RALU:inst4|RgA[1]                 ; RALU:inst4|RON[2][3]              ; clk          ; clk         ; 1.000        ; -0.004     ; 4.567      ;
+; -3.532 ; RALU:inst4|RgA[1]                 ; RALU:inst4|RON[3][3]              ; clk          ; clk         ; 1.000        ; -0.004     ; 4.566      ;
+; -3.520 ; RALU:inst4|RgB[0]                 ; RALU:inst4|RON[0][3]              ; clk          ; clk         ; 1.000        ; 0.000      ; 4.558      ;
+; -3.515 ; RALU:inst4|RgA[1]                 ; FAP:inst2|inst2                   ; clk          ; clk         ; 1.000        ; 0.001      ; 4.554      ;
+; -3.503 ; ControlUnit:inst|ControlBus_o[5]  ; RALU:inst4|RgB[1]                 ; clk          ; clk         ; 1.000        ; 0.002      ; 4.543      ;
+; -3.492 ; RALU:inst4|RgA[1]                 ; RALU:inst4|RON[2][1]              ; clk          ; clk         ; 1.000        ; -0.004     ; 4.526      ;
+; -3.491 ; RALU:inst4|RgA[1]                 ; RALU:inst4|RON[3][1]              ; clk          ; clk         ; 1.000        ; -0.004     ; 4.525      ;
+; -3.469 ; RALU:inst4|RgB[1]                 ; RALU:inst4|RON[4][3]              ; clk          ; clk         ; 1.000        ; -0.002     ; 4.505      ;
+; -3.465 ; ControlUnit:inst|ControlBus_o[13] ; RALU:inst4|RON[7][3]              ; clk          ; clk         ; 1.000        ; -0.002     ; 4.501      ;
+; -3.464 ; ControlUnit:inst|ControlBus_o[13] ; RALU:inst4|RON[5][3]              ; clk          ; clk         ; 1.000        ; -0.002     ; 4.500      ;
+; -3.456 ; ControlUnit:inst|ControlBus_o[5]  ; RALU:inst4|RgB[3]                 ; clk          ; clk         ; 1.000        ; 0.002      ; 4.496      ;
+; -3.452 ; RALU:inst4|RgB[1]                 ; RALU:inst4|RON[0][3]              ; clk          ; clk         ; 1.000        ; 0.000      ; 4.490      ;
+; -3.438 ; ControlUnit:inst|ControlBus_o[5]  ; RALU:inst4|RgB[2]                 ; clk          ; clk         ; 1.000        ; 0.002      ; 4.478      ;
+; -3.438 ; RALU:inst4|RgA[0]                 ; RALU:inst4|RON[4][3]              ; clk          ; clk         ; 1.000        ; -0.001     ; 4.475      ;
+; -3.432 ; RALU:inst4|RgB[2]                 ; RALU:inst4|RON[4][3]              ; clk          ; clk         ; 1.000        ; -0.002     ; 4.468      ;
+; -3.421 ; RALU:inst4|RgA[0]                 ; RALU:inst4|RON[0][3]              ; clk          ; clk         ; 1.000        ; 0.001      ; 4.460      ;
+; -3.415 ; RALU:inst4|RgB[2]                 ; RALU:inst4|RON[0][3]              ; clk          ; clk         ; 1.000        ; 0.000      ; 4.453      ;
+; -3.407 ; ControlUnit:inst|ControlBus_o[14] ; RALU:inst4|RON[2][3]              ; clk          ; clk         ; 1.000        ; -0.005     ; 4.440      ;
+; -3.406 ; ControlUnit:inst|ControlBus_o[14] ; RALU:inst4|RON[3][3]              ; clk          ; clk         ; 1.000        ; -0.005     ; 4.439      ;
+; -3.400 ; ControlUnit:inst|ControlBus_o[13] ; RALU:inst4|RON[5][2]              ; clk          ; clk         ; 1.000        ; -0.002     ; 4.436      ;
+; -3.399 ; ControlUnit:inst|ControlBus_o[13] ; RALU:inst4|RON[7][2]              ; clk          ; clk         ; 1.000        ; -0.002     ; 4.435      ;
+; -3.395 ; RALU:inst4|RgA[2]                 ; RALU:inst4|RON[7][3]              ; clk          ; clk         ; 1.000        ; -0.001     ; 4.432      ;
+; -3.394 ; RALU:inst4|RgA[2]                 ; RALU:inst4|RON[5][3]              ; clk          ; clk         ; 1.000        ; -0.001     ; 4.431      ;
+; -3.393 ; RALU:inst4|RgB[0]                 ; RALU:inst4|RON[2][3]              ; clk          ; clk         ; 1.000        ; -0.005     ; 4.426      ;
+; -3.392 ; RALU:inst4|RgB[0]                 ; RALU:inst4|RON[3][3]              ; clk          ; clk         ; 1.000        ; -0.005     ; 4.425      ;
+; -3.389 ; ControlUnit:inst|ControlBus_o[14] ; FAP:inst2|inst2                   ; clk          ; clk         ; 1.000        ; 0.000      ; 4.427      ;
+; -3.375 ; RALU:inst4|RgB[0]                 ; FAP:inst2|inst2                   ; clk          ; clk         ; 1.000        ; 0.000      ; 4.413      ;
+; -3.375 ; RALU:inst4|RgA[1]                 ; RALU:inst4|RON[7][3]              ; clk          ; clk         ; 1.000        ; -0.001     ; 4.412      ;
+; -3.374 ; RALU:inst4|RgA[1]                 ; RALU:inst4|RON[5][3]              ; clk          ; clk         ; 1.000        ; -0.001     ; 4.411      ;
+; -3.366 ; ControlUnit:inst|ControlBus_o[14] ; RALU:inst4|RON[2][1]              ; clk          ; clk         ; 1.000        ; -0.005     ; 4.399      ;
+; -3.365 ; ControlUnit:inst|ControlBus_o[14] ; RALU:inst4|RON[3][1]              ; clk          ; clk         ; 1.000        ; -0.005     ; 4.398      ;
+; -3.363 ; ControlUnit:inst|ControlBus_o[13] ; RALU:inst4|RON[2][1]              ; clk          ; clk         ; 1.000        ; -0.005     ; 4.396      ;
+; -3.362 ; ControlUnit:inst|ControlBus_o[13] ; RALU:inst4|RON[3][1]              ; clk          ; clk         ; 1.000        ; -0.005     ; 4.395      ;
+; -3.339 ; RALU:inst4|RgA[1]                 ; RALU:inst4|RON[6][1]              ; clk          ; clk         ; 1.000        ; 0.001      ; 4.378      ;
+; -3.337 ; RALU:inst4|RgA[1]                 ; RALU:inst4|RON[0][1]              ; clk          ; clk         ; 1.000        ; 0.001      ; 4.376      ;
+; -3.335 ; ControlUnit:inst|ControlBus_o[15] ; RALU:inst4|RON[2][1]              ; clk          ; clk         ; 1.000        ; -0.005     ; 4.368      ;
+; -3.334 ; ControlUnit:inst|ControlBus_o[15] ; RALU:inst4|RON[3][1]              ; clk          ; clk         ; 1.000        ; -0.005     ; 4.367      ;
+; -3.325 ; RALU:inst4|RgB[1]                 ; RALU:inst4|RON[2][3]              ; clk          ; clk         ; 1.000        ; -0.005     ; 4.358      ;
+; -3.324 ; RALU:inst4|RgB[1]                 ; RALU:inst4|RON[3][3]              ; clk          ; clk         ; 1.000        ; -0.005     ; 4.357      ;
+; -3.313 ; ControlUnit:inst|ControlBus_o[13] ; RALU:inst4|RON[1][3]              ; clk          ; clk         ; 1.000        ; 0.000      ; 4.351      ;
+; -3.307 ; RALU:inst4|RgB[1]                 ; FAP:inst2|inst2                   ; clk          ; clk         ; 1.000        ; 0.000      ; 4.345      ;
+; -3.294 ; RALU:inst4|RgA[0]                 ; RALU:inst4|RON[2][3]              ; clk          ; clk         ; 1.000        ; -0.004     ; 4.328      ;
+; -3.293 ; RALU:inst4|RgA[0]                 ; RALU:inst4|RON[3][3]              ; clk          ; clk         ; 1.000        ; -0.004     ; 4.327      ;
+; -3.288 ; RALU:inst4|RgB[2]                 ; RALU:inst4|RON[2][3]              ; clk          ; clk         ; 1.000        ; -0.005     ; 4.321      ;
+; -3.287 ; RALU:inst4|RgB[2]                 ; RALU:inst4|RON[3][3]              ; clk          ; clk         ; 1.000        ; -0.005     ; 4.320      ;
+; -3.284 ; RALU:inst4|RgB[1]                 ; RALU:inst4|RON[2][1]              ; clk          ; clk         ; 1.000        ; -0.005     ; 4.317      ;
+; -3.283 ; RALU:inst4|RgB[1]                 ; RALU:inst4|RON[3][1]              ; clk          ; clk         ; 1.000        ; -0.005     ; 4.316      ;
+; -3.282 ; ControlUnit:inst|ControlBus_o[13] ; RALU:inst4|RON[6][2]              ; clk          ; clk         ; 1.000        ; 0.000      ; 4.320      ;
+; -3.276 ; RALU:inst4|RgA[0]                 ; FAP:inst2|inst2                   ; clk          ; clk         ; 1.000        ; 0.001      ; 4.315      ;
+; -3.270 ; ControlUnit:inst|ControlBus_o[15] ; RALU:inst4|RON[4][3]              ; clk          ; clk         ; 1.000        ; -0.002     ; 4.306      ;
+; -3.270 ; RALU:inst4|RgB[2]                 ; FAP:inst2|inst2                   ; clk          ; clk         ; 1.000        ; 0.000      ; 4.308      ;
+; -3.267 ; RALU:inst4|RgA[1]                 ; RALU:inst4|RON[5][2]              ; clk          ; clk         ; 1.000        ; -0.001     ; 4.304      ;
+; -3.266 ; RALU:inst4|RgA[1]                 ; RALU:inst4|RON[7][2]              ; clk          ; clk         ; 1.000        ; -0.001     ; 4.303      ;
+; -3.260 ; RALU:inst4|RgB[0]                 ; RALU:inst4|RON[2][1]              ; clk          ; clk         ; 1.000        ; -0.005     ; 4.293      ;
+; -3.259 ; RALU:inst4|RgB[0]                 ; RALU:inst4|RON[3][1]              ; clk          ; clk         ; 1.000        ; -0.005     ; 4.292      ;
+; -3.258 ; RALU:inst4|RgA[1]                 ; RALU:inst4|RON[4][1]              ; clk          ; clk         ; 1.000        ; -0.001     ; 4.295      ;
+; -3.253 ; ControlUnit:inst|ControlBus_o[13] ; RALU:inst4|RON[4][2]              ; clk          ; clk         ; 1.000        ; -0.002     ; 4.289      ;
+; -3.253 ; ControlUnit:inst|ControlBus_o[15] ; RALU:inst4|RON[0][3]              ; clk          ; clk         ; 1.000        ; 0.000      ; 4.291      ;
+; -3.249 ; ControlUnit:inst|ControlBus_o[4]  ; RALU:inst4|RgA[0]                 ; clk          ; clk         ; 1.000        ; 0.001      ; 4.288      ;
+; -3.249 ; ControlUnit:inst|ControlBus_o[14] ; RALU:inst4|RON[7][3]              ; clk          ; clk         ; 1.000        ; -0.002     ; 4.285      ;
+; -3.249 ; RALU:inst4|RgA[3]                 ; RALU:inst4|RON[4][3]              ; clk          ; clk         ; 1.000        ; -0.001     ; 4.286      ;
+; -3.248 ; ControlUnit:inst|ControlBus_o[14] ; RALU:inst4|RON[5][3]              ; clk          ; clk         ; 1.000        ; -0.002     ; 4.284      ;
+; -3.243 ; RALU:inst4|RgA[2]                 ; RALU:inst4|RON[1][3]              ; clk          ; clk         ; 1.000        ; 0.001      ; 4.282      ;
+; -3.242 ; ControlUnit:inst|p_counter[1]     ; ControlUnit:inst|ControlBus_o[7]  ; clk          ; clk         ; 1.000        ; 0.003      ; 4.283      ;
+; -3.235 ; RALU:inst4|RgB[0]                 ; RALU:inst4|RON[7][3]              ; clk          ; clk         ; 1.000        ; -0.002     ; 4.271      ;
+; -3.234 ; RALU:inst4|RgB[0]                 ; RALU:inst4|RON[5][3]              ; clk          ; clk         ; 1.000        ; -0.002     ; 4.270      ;
+; -3.232 ; RALU:inst4|RgA[3]                 ; RALU:inst4|RON[0][3]              ; clk          ; clk         ; 1.000        ; 0.001      ; 4.271      ;
+; -3.223 ; RALU:inst4|RgA[1]                 ; RALU:inst4|RON[1][3]              ; clk          ; clk         ; 1.000        ; 0.001      ; 4.262      ;
+; -3.215 ; RALU:inst4|RgA[1]                 ; RALU:inst4|RON[1][1]              ; clk          ; clk         ; 1.000        ; 0.001      ; 4.254      ;
+; -3.214 ; ControlUnit:inst|ControlBus_o[13] ; RALU:inst4|RON[6][3]              ; clk          ; clk         ; 1.000        ; 0.000      ; 4.252      ;
+; -3.213 ; ControlUnit:inst|ControlBus_o[14] ; RALU:inst4|RON[6][1]              ; clk          ; clk         ; 1.000        ; 0.000      ; 4.251      ;
+; -3.211 ; ControlUnit:inst|ControlBus_o[14] ; RALU:inst4|RON[0][1]              ; clk          ; clk         ; 1.000        ; 0.000      ; 4.249      ;
+; -3.210 ; ControlUnit:inst|ControlBus_o[13] ; RALU:inst4|RON[6][1]              ; clk          ; clk         ; 1.000        ; 0.000      ; 4.248      ;
+; -3.209 ; ControlUnit:inst|p_counter[1]     ; ControlUnit:inst|ControlBus_o[15] ; clk          ; clk         ; 1.000        ; 0.003      ; 4.250      ;
+; -3.208 ; ControlUnit:inst|ControlBus_o[4]  ; RALU:inst4|RgB[1]                 ; clk          ; clk         ; 1.000        ; 0.002      ; 4.248      ;
+; -3.208 ; ControlUnit:inst|ControlBus_o[13] ; RALU:inst4|RON[0][1]              ; clk          ; clk         ; 1.000        ; 0.000      ; 4.246      ;
+; -3.207 ; ControlUnit:inst|p_counter[1]     ; ControlUnit:inst|ControlBus_o[14] ; clk          ; clk         ; 1.000        ; 0.003      ; 4.248      ;
+; -3.207 ; ControlUnit:inst|p_counter[1]     ; ControlUnit:inst|ControlBus_o[12] ; clk          ; clk         ; 1.000        ; 0.003      ; 4.248      ;
+; -3.203 ; ControlUnit:inst|ControlBus_o[5]  ; RALU:inst4|RgA[0]                 ; clk          ; clk         ; 1.000        ; 0.001      ; 4.242      ;
+; -3.192 ; RALU:inst4|RgA[0]                 ; RALU:inst4|RON[2][1]              ; clk          ; clk         ; 1.000        ; -0.004     ; 4.226      ;
+; -3.191 ; RALU:inst4|RgA[0]                 ; RALU:inst4|RON[3][1]              ; clk          ; clk         ; 1.000        ; -0.004     ; 4.225      ;
+; -3.188 ; ControlUnit:inst|ControlBus_o[15] ; FAP:inst2|inst2                   ; clk          ; clk         ; 1.000        ; 0.000      ; 4.226      ;
+; -3.182 ; ControlUnit:inst|ControlBus_o[15] ; RALU:inst4|RON[6][1]              ; clk          ; clk         ; 1.000        ; 0.000      ; 4.220      ;
+; -3.180 ; ControlUnit:inst|ControlBus_o[15] ; RALU:inst4|RON[0][1]              ; clk          ; clk         ; 1.000        ; 0.000      ; 4.218      ;
+; -3.177 ; ControlUnit:inst|ControlBus_o[4]  ; RALU:inst4|RgB[3]                 ; clk          ; clk         ; 1.000        ; 0.002      ; 4.217      ;
++--------+-----------------------------------+-----------------------------------+--------------+-------------+--------------+------------+------------+
+
+
++-----------------------------------------------------------------------------------------------------------------------------------------------------+
+; Slow Model Hold: 'clk'                                                                                                                              ;
++-------+-----------------------------------+-----------------------------------+--------------+-------------+--------------+------------+------------+
+; Slack ; From Node                         ; To Node                           ; Launch Clock ; Latch Clock ; Relationship ; Clock Skew ; Data Delay ;
++-------+-----------------------------------+-----------------------------------+--------------+-------------+--------------+------------+------------+
+; 1.061 ; ControlUnit:inst|ControlBus_o[8]  ; RALU:inst4|RgA[0]                 ; clk          ; clk         ; 0.000        ; 0.000      ; 1.347      ;
+; 1.061 ; ControlUnit:inst|ControlBus_o[8]  ; RALU:inst4|RgA[1]                 ; clk          ; clk         ; 0.000        ; 0.000      ; 1.347      ;
+; 1.061 ; ControlUnit:inst|ControlBus_o[8]  ; RALU:inst4|RgA[2]                 ; clk          ; clk         ; 0.000        ; 0.000      ; 1.347      ;
+; 1.061 ; ControlUnit:inst|ControlBus_o[8]  ; RALU:inst4|RgA[3]                 ; clk          ; clk         ; 0.000        ; 0.000      ; 1.347      ;
+; 1.087 ; ControlUnit:inst|ControlBus_o[0]  ; RALU:inst4|RgA[0]                 ; clk          ; clk         ; 0.000        ; 0.000      ; 1.373      ;
+; 1.087 ; ControlUnit:inst|ControlBus_o[0]  ; RALU:inst4|RgA[1]                 ; clk          ; clk         ; 0.000        ; 0.000      ; 1.373      ;
+; 1.087 ; ControlUnit:inst|ControlBus_o[0]  ; RALU:inst4|RgA[2]                 ; clk          ; clk         ; 0.000        ; 0.000      ; 1.373      ;
+; 1.087 ; ControlUnit:inst|ControlBus_o[0]  ; RALU:inst4|RgA[3]                 ; clk          ; clk         ; 0.000        ; 0.000      ; 1.373      ;
+; 1.102 ; ControlUnit:inst|ControlBus_o[2]  ; RALU:inst4|RgB[0]                 ; clk          ; clk         ; 0.000        ; 0.000      ; 1.388      ;
+; 1.102 ; ControlUnit:inst|ControlBus_o[2]  ; RALU:inst4|RgB[1]                 ; clk          ; clk         ; 0.000        ; 0.000      ; 1.388      ;
+; 1.102 ; ControlUnit:inst|ControlBus_o[2]  ; RALU:inst4|RgB[2]                 ; clk          ; clk         ; 0.000        ; 0.000      ; 1.388      ;
+; 1.102 ; ControlUnit:inst|ControlBus_o[2]  ; RALU:inst4|RgB[3]                 ; clk          ; clk         ; 0.000        ; 0.000      ; 1.388      ;
+; 1.179 ; RALU:inst4|RgB[3]                 ; FAP:inst2|inst1                   ; clk          ; clk         ; 0.000        ; 0.000      ; 1.465      ;
+; 1.287 ; ControlUnit:inst|p_counter[1]     ; ControlUnit:inst|ControlBus_o[6]  ; clk          ; clk         ; 0.000        ; 0.001      ; 1.574      ;
+; 1.403 ; ControlUnit:inst|p_counter[5]     ; ControlUnit:inst|ControlBus_o[6]  ; clk          ; clk         ; 0.000        ; 0.001      ; 1.690      ;
+; 1.425 ; ControlUnit:inst|p_counter[5]     ; ControlUnit:inst|ControlBus_o[0]  ; clk          ; clk         ; 0.000        ; 0.002      ; 1.713      ;
+; 1.430 ; ControlUnit:inst|p_counter[5]     ; ControlUnit:inst|ControlBus_o[8]  ; clk          ; clk         ; 0.000        ; 0.002      ; 1.718      ;
+; 1.511 ; ControlUnit:inst|ControlBus_o[12] ; RALU:inst4|RON[0][0]              ; clk          ; clk         ; 0.000        ; 0.000      ; 1.797      ;
+; 1.528 ; ControlUnit:inst|ControlBus_o[6]  ; RALU:inst4|RgA[2]                 ; clk          ; clk         ; 0.000        ; 0.001      ; 1.815      ;
+; 1.529 ; ControlUnit:inst|ControlBus_o[6]  ; RALU:inst4|RgA[1]                 ; clk          ; clk         ; 0.000        ; 0.001      ; 1.816      ;
+; 1.534 ; ControlUnit:inst|p_counter[0]     ; ControlUnit:inst|ControlBus_o[11] ; clk          ; clk         ; 0.000        ; 0.003      ; 1.823      ;
+; 1.543 ; ControlUnit:inst|p_counter[2]     ; ControlUnit:inst|ControlBus_o[6]  ; clk          ; clk         ; 0.000        ; 0.001      ; 1.830      ;
+; 1.554 ; ControlUnit:inst|ControlBus_o[11] ; RALU:inst4|RON[0][0]              ; clk          ; clk         ; 0.000        ; 0.000      ; 1.840      ;
+; 1.564 ; ControlUnit:inst|p_counter[4]     ; ControlUnit:inst|ControlBus_o[0]  ; clk          ; clk         ; 0.000        ; 0.002      ; 1.852      ;
+; 1.566 ; ControlUnit:inst|p_counter[4]     ; ControlUnit:inst|ControlBus_o[8]  ; clk          ; clk         ; 0.000        ; 0.002      ; 1.854      ;
+; 1.599 ; ControlUnit:inst|p_counter[4]     ; ControlUnit:inst|ControlBus_o[7]  ; clk          ; clk         ; 0.000        ; 0.003      ; 1.888      ;
+; 1.631 ; ControlUnit:inst|p_counter[4]     ; ControlUnit:inst|p_counter[4]     ; clk          ; clk         ; 0.000        ; 0.000      ; 1.917      ;
+; 1.649 ; ControlUnit:inst|p_counter[3]     ; ControlUnit:inst|ControlBus_o[2]  ; clk          ; clk         ; 0.000        ; 0.003      ; 1.938      ;
+; 1.649 ; ControlUnit:inst|p_counter[2]     ; ControlUnit:inst|ControlBus_o[12] ; clk          ; clk         ; 0.000        ; 0.003      ; 1.938      ;
+; 1.654 ; ControlUnit:inst|p_counter[3]     ; ControlUnit:inst|ControlBus_o[14] ; clk          ; clk         ; 0.000        ; 0.003      ; 1.943      ;
+; 1.688 ; ControlUnit:inst|p_counter[5]     ; ControlUnit:inst|p_counter[3]     ; clk          ; clk         ; 0.000        ; 0.000      ; 1.974      ;
+; 1.688 ; ControlUnit:inst|p_counter[5]     ; ControlUnit:inst|p_counter[0]     ; clk          ; clk         ; 0.000        ; 0.000      ; 1.974      ;
+; 1.688 ; ControlUnit:inst|p_counter[5]     ; ControlUnit:inst|p_counter[2]     ; clk          ; clk         ; 0.000        ; 0.000      ; 1.974      ;
+; 1.689 ; ControlUnit:inst|p_counter[5]     ; ControlUnit:inst|p_counter[5]     ; clk          ; clk         ; 0.000        ; 0.000      ; 1.975      ;
+; 1.690 ; ControlUnit:inst|p_counter[5]     ; ControlUnit:inst|p_counter[1]     ; clk          ; clk         ; 0.000        ; 0.000      ; 1.976      ;
+; 1.696 ; ControlUnit:inst|p_counter[0]     ; ControlUnit:inst|ControlBus_o[6]  ; clk          ; clk         ; 0.000        ; 0.001      ; 1.983      ;
+; 1.696 ; ControlUnit:inst|p_counter[2]     ; ControlUnit:inst|p_counter[2]     ; clk          ; clk         ; 0.000        ; 0.000      ; 1.982      ;
+; 1.737 ; ControlUnit:inst|p_counter[4]     ; ControlUnit:inst|ControlBus_o[6]  ; clk          ; clk         ; 0.000        ; 0.001      ; 2.024      ;
+; 1.738 ; ControlUnit:inst|p_counter[2]     ; ControlUnit:inst|ControlBus_o[8]  ; clk          ; clk         ; 0.000        ; 0.002      ; 2.026      ;
+; 1.744 ; ControlUnit:inst|ControlBus_o[5]  ; RALU:inst4|RON[4][0]              ; clk          ; clk         ; 0.000        ; 0.000      ; 2.030      ;
+; 1.744 ; ControlUnit:inst|ControlBus_o[5]  ; RALU:inst4|RON[4][1]              ; clk          ; clk         ; 0.000        ; 0.000      ; 2.030      ;
+; 1.744 ; ControlUnit:inst|ControlBus_o[5]  ; RALU:inst4|RON[4][2]              ; clk          ; clk         ; 0.000        ; 0.000      ; 2.030      ;
+; 1.744 ; ControlUnit:inst|ControlBus_o[5]  ; RALU:inst4|RON[4][3]              ; clk          ; clk         ; 0.000        ; 0.000      ; 2.030      ;
+; 1.751 ; ControlUnit:inst|ControlBus_o[13] ; FAP:inst2|inst1                   ; clk          ; clk         ; 0.000        ; 0.000      ; 2.037      ;
+; 1.762 ; RALU:inst4|RgB[1]                 ; FAP:inst2|inst1                   ; clk          ; clk         ; 0.000        ; 0.000      ; 2.048      ;
+; 1.779 ; ControlUnit:inst|ControlBus_o[6]  ; RALU:inst4|RgA[3]                 ; clk          ; clk         ; 0.000        ; 0.001      ; 2.066      ;
+; 1.781 ; ControlUnit:inst|ControlBus_o[14] ; FAP:inst2|inst1                   ; clk          ; clk         ; 0.000        ; 0.000      ; 2.067      ;
+; 1.789 ; ControlUnit:inst|p_counter[4]     ; ControlUnit:inst|p_counter[2]     ; clk          ; clk         ; 0.000        ; 0.000      ; 2.075      ;
+; 1.789 ; ControlUnit:inst|p_counter[4]     ; ControlUnit:inst|p_counter[1]     ; clk          ; clk         ; 0.000        ; 0.000      ; 2.075      ;
+; 1.795 ; ControlUnit:inst|ControlBus_o[14] ; RALU:inst4|RON[0][0]              ; clk          ; clk         ; 0.000        ; 0.000      ; 2.081      ;
+; 1.808 ; ControlUnit:inst|p_counter[2]     ; ControlUnit:inst|ControlBus_o[2]  ; clk          ; clk         ; 0.000        ; 0.003      ; 2.097      ;
+; 1.838 ; ControlUnit:inst|p_counter[1]     ; ControlUnit:inst|ControlBus_o[11] ; clk          ; clk         ; 0.000        ; 0.003      ; 2.127      ;
+; 1.843 ; ControlUnit:inst|p_counter[1]     ; ControlUnit:inst|ControlBus_o[15] ; clk          ; clk         ; 0.000        ; 0.003      ; 2.132      ;
+; 1.851 ; ControlUnit:inst|p_counter[1]     ; ControlUnit:inst|p_counter[1]     ; clk          ; clk         ; 0.000        ; 0.000      ; 2.137      ;
+; 1.859 ; RALU:inst4|RgA[0]                 ; RALU:inst4|RON[0][0]              ; clk          ; clk         ; 0.000        ; 0.001      ; 2.146      ;
+; 1.862 ; ControlUnit:inst|p_counter[3]     ; ControlUnit:inst|p_counter[3]     ; clk          ; clk         ; 0.000        ; 0.000      ; 2.148      ;
+; 1.870 ; ControlUnit:inst|p_counter[0]     ; ControlUnit:inst|p_counter[0]     ; clk          ; clk         ; 0.000        ; 0.000      ; 2.156      ;
+; 1.877 ; ControlUnit:inst|ControlBus_o[4]  ; RALU:inst4|RON[4][0]              ; clk          ; clk         ; 0.000        ; 0.000      ; 2.163      ;
+; 1.877 ; ControlUnit:inst|ControlBus_o[4]  ; RALU:inst4|RON[4][1]              ; clk          ; clk         ; 0.000        ; 0.000      ; 2.163      ;
+; 1.877 ; ControlUnit:inst|ControlBus_o[4]  ; RALU:inst4|RON[4][2]              ; clk          ; clk         ; 0.000        ; 0.000      ; 2.163      ;
+; 1.877 ; ControlUnit:inst|ControlBus_o[4]  ; RALU:inst4|RON[4][3]              ; clk          ; clk         ; 0.000        ; 0.000      ; 2.163      ;
+; 1.901 ; FAP:inst2|inst2                   ; ControlUnit:inst|p_counter[1]     ; clk          ; clk         ; 0.000        ; -0.003     ; 2.184      ;
+; 1.902 ; ControlUnit:inst|p_counter[1]     ; ControlUnit:inst|ControlBus_o[2]  ; clk          ; clk         ; 0.000        ; 0.003      ; 2.191      ;
+; 1.907 ; FAP:inst2|inst2                   ; ControlUnit:inst|p_counter[4]     ; clk          ; clk         ; 0.000        ; -0.003     ; 2.190      ;
+; 1.907 ; FAP:inst2|inst2                   ; ControlUnit:inst|p_counter[0]     ; clk          ; clk         ; 0.000        ; -0.003     ; 2.190      ;
+; 1.907 ; FAP:inst2|inst2                   ; ControlUnit:inst|p_counter[5]     ; clk          ; clk         ; 0.000        ; -0.003     ; 2.190      ;
+; 1.908 ; FAP:inst2|inst2                   ; ControlUnit:inst|p_counter[3]     ; clk          ; clk         ; 0.000        ; -0.003     ; 2.191      ;
+; 1.909 ; FAP:inst2|inst2                   ; ControlUnit:inst|p_counter[2]     ; clk          ; clk         ; 0.000        ; -0.003     ; 2.192      ;
+; 1.930 ; ControlUnit:inst|ControlBus_o[12] ; RALU:inst4|RON[6][3]              ; clk          ; clk         ; 0.000        ; 0.000      ; 2.216      ;
+; 1.932 ; ControlUnit:inst|p_counter[0]     ; ControlUnit:inst|ControlBus_o[8]  ; clk          ; clk         ; 0.000        ; 0.002      ; 2.220      ;
+; 1.958 ; RALU:inst4|RgB[0]                 ; RALU:inst4|RON[0][0]              ; clk          ; clk         ; 0.000        ; 0.000      ; 2.244      ;
+; 1.959 ; ControlUnit:inst|ControlBus_o[12] ; RALU:inst4|RON[0][2]              ; clk          ; clk         ; 0.000        ; 0.000      ; 2.245      ;
+; 1.959 ; ControlUnit:inst|ControlBus_o[12] ; RALU:inst4|RON[1][2]              ; clk          ; clk         ; 0.000        ; 0.000      ; 2.245      ;
+; 1.962 ; ControlUnit:inst|p_counter[5]     ; ControlUnit:inst|ControlBus_o[2]  ; clk          ; clk         ; 0.000        ; 0.003      ; 2.251      ;
+; 1.967 ; ControlUnit:inst|p_counter[2]     ; ControlUnit:inst|ControlBus_o[15] ; clk          ; clk         ; 0.000        ; 0.003      ; 2.256      ;
+; 1.980 ; ControlUnit:inst|p_counter[5]     ; ControlUnit:inst|ControlBus_o[5]  ; clk          ; clk         ; 0.000        ; 0.001      ; 2.267      ;
+; 1.980 ; ControlUnit:inst|ControlBus_o[13] ; RALU:inst4|RON[0][0]              ; clk          ; clk         ; 0.000        ; 0.000      ; 2.266      ;
+; 1.990 ; ControlUnit:inst|p_counter[1]     ; ControlUnit:inst|ControlBus_o[12] ; clk          ; clk         ; 0.000        ; 0.003      ; 2.279      ;
+; 1.994 ; ControlUnit:inst|ControlBus_o[5]  ; RALU:inst4|RON[7][0]              ; clk          ; clk         ; 0.000        ; 0.000      ; 2.280      ;
+; 1.994 ; ControlUnit:inst|ControlBus_o[5]  ; RALU:inst4|RON[7][1]              ; clk          ; clk         ; 0.000        ; 0.000      ; 2.280      ;
+; 1.994 ; ControlUnit:inst|ControlBus_o[5]  ; RALU:inst4|RON[7][2]              ; clk          ; clk         ; 0.000        ; 0.000      ; 2.280      ;
+; 1.994 ; ControlUnit:inst|ControlBus_o[5]  ; RALU:inst4|RON[7][3]              ; clk          ; clk         ; 0.000        ; 0.000      ; 2.280      ;
+; 1.994 ; ControlUnit:inst|p_counter[2]     ; ControlUnit:inst|ControlBus_o[0]  ; clk          ; clk         ; 0.000        ; 0.002      ; 2.282      ;
+; 1.998 ; ControlUnit:inst|ControlBus_o[5]  ; RALU:inst4|RON[5][0]              ; clk          ; clk         ; 0.000        ; 0.000      ; 2.284      ;
+; 1.998 ; ControlUnit:inst|ControlBus_o[5]  ; RALU:inst4|RON[5][1]              ; clk          ; clk         ; 0.000        ; 0.000      ; 2.284      ;
+; 1.998 ; ControlUnit:inst|ControlBus_o[5]  ; RALU:inst4|RON[5][2]              ; clk          ; clk         ; 0.000        ; 0.000      ; 2.284      ;
+; 1.998 ; ControlUnit:inst|ControlBus_o[5]  ; RALU:inst4|RON[5][3]              ; clk          ; clk         ; 0.000        ; 0.000      ; 2.284      ;
+; 2.022 ; ControlUnit:inst|p_counter[4]     ; ControlUnit:inst|p_counter[3]     ; clk          ; clk         ; 0.000        ; 0.000      ; 2.308      ;
+; 2.022 ; ControlUnit:inst|p_counter[4]     ; ControlUnit:inst|p_counter[0]     ; clk          ; clk         ; 0.000        ; 0.000      ; 2.308      ;
+; 2.023 ; ControlUnit:inst|p_counter[4]     ; ControlUnit:inst|p_counter[5]     ; clk          ; clk         ; 0.000        ; 0.000      ; 2.309      ;
+; 2.029 ; ControlUnit:inst|ControlBus_o[12] ; RALU:inst4|RON[1][3]              ; clk          ; clk         ; 0.000        ; 0.000      ; 2.315      ;
+; 2.035 ; ControlUnit:inst|p_counter[5]     ; ControlUnit:inst|p_counter[4]     ; clk          ; clk         ; 0.000        ; 0.000      ; 2.321      ;
+; 2.066 ; ControlUnit:inst|p_counter[5]     ; ControlUnit:inst|ControlBus_o[4]  ; clk          ; clk         ; 0.000        ; 0.001      ; 2.353      ;
+; 2.066 ; ControlUnit:inst|p_counter[1]     ; ControlUnit:inst|p_counter[2]     ; clk          ; clk         ; 0.000        ; 0.000      ; 2.352      ;
+; 2.074 ; ControlUnit:inst|p_counter[3]     ; ControlUnit:inst|p_counter[4]     ; clk          ; clk         ; 0.000        ; 0.000      ; 2.360      ;
+; 2.075 ; ControlUnit:inst|ControlBus_o[12] ; RALU:inst4|RON[3][2]              ; clk          ; clk         ; 0.000        ; -0.005     ; 2.356      ;
+; 2.078 ; ControlUnit:inst|ControlBus_o[12] ; RALU:inst4|RON[2][2]              ; clk          ; clk         ; 0.000        ; -0.005     ; 2.359      ;
+; 2.097 ; ControlUnit:inst|p_counter[3]     ; ControlUnit:inst|ControlBus_o[8]  ; clk          ; clk         ; 0.000        ; 0.002      ; 2.385      ;
+; 2.099 ; ControlUnit:inst|p_counter[0]     ; ControlUnit:inst|ControlBus_o[2]  ; clk          ; clk         ; 0.000        ; 0.003      ; 2.388      ;
+; 2.120 ; ControlUnit:inst|ControlBus_o[6]  ; RALU:inst4|RON[4][0]              ; clk          ; clk         ; 0.000        ; 0.000      ; 2.406      ;
++-------+-----------------------------------+-----------------------------------+--------------+-------------+--------------+------------+------------+
+
+
++--------------------------------------------------------------------------------------------------------------------+
+; Slow Model Minimum Pulse Width: 'clk'                                                                              ;
++--------+--------------+----------------+------------------+-------+------------+-----------------------------------+
+; Slack  ; Actual Width ; Required Width ; Type             ; Clock ; Clock Edge ; Target                            ;
++--------+--------------+----------------+------------------+-------+------------+-----------------------------------+
+; -1.631 ; 1.000        ; 2.631          ; Port Rate        ; clk   ; Rise       ; clk                               ;
+; -0.611 ; 0.500        ; 1.111          ; High Pulse Width ; clk   ; Rise       ; ControlUnit:inst|ControlBus_o[0]  ;
+; -0.611 ; 0.500        ; 1.111          ; Low Pulse Width  ; clk   ; Rise       ; ControlUnit:inst|ControlBus_o[0]  ;
+; -0.611 ; 0.500        ; 1.111          ; High Pulse Width ; clk   ; Rise       ; ControlUnit:inst|ControlBus_o[11] ;
+; -0.611 ; 0.500        ; 1.111          ; Low Pulse Width  ; clk   ; Rise       ; ControlUnit:inst|ControlBus_o[11] ;
+; -0.611 ; 0.500        ; 1.111          ; High Pulse Width ; clk   ; Rise       ; ControlUnit:inst|ControlBus_o[12] ;
+; -0.611 ; 0.500        ; 1.111          ; Low Pulse Width  ; clk   ; Rise       ; ControlUnit:inst|ControlBus_o[12] ;
+; -0.611 ; 0.500        ; 1.111          ; High Pulse Width ; clk   ; Rise       ; ControlUnit:inst|ControlBus_o[13] ;
+; -0.611 ; 0.500        ; 1.111          ; Low Pulse Width  ; clk   ; Rise       ; ControlUnit:inst|ControlBus_o[13] ;
+; -0.611 ; 0.500        ; 1.111          ; High Pulse Width ; clk   ; Rise       ; ControlUnit:inst|ControlBus_o[14] ;
+; -0.611 ; 0.500        ; 1.111          ; Low Pulse Width  ; clk   ; Rise       ; ControlUnit:inst|ControlBus_o[14] ;
+; -0.611 ; 0.500        ; 1.111          ; High Pulse Width ; clk   ; Rise       ; ControlUnit:inst|ControlBus_o[15] ;
+; -0.611 ; 0.500        ; 1.111          ; Low Pulse Width  ; clk   ; Rise       ; ControlUnit:inst|ControlBus_o[15] ;
+; -0.611 ; 0.500        ; 1.111          ; High Pulse Width ; clk   ; Rise       ; ControlUnit:inst|ControlBus_o[2]  ;
+; -0.611 ; 0.500        ; 1.111          ; Low Pulse Width  ; clk   ; Rise       ; ControlUnit:inst|ControlBus_o[2]  ;
+; -0.611 ; 0.500        ; 1.111          ; High Pulse Width ; clk   ; Rise       ; ControlUnit:inst|ControlBus_o[4]  ;
+; -0.611 ; 0.500        ; 1.111          ; Low Pulse Width  ; clk   ; Rise       ; ControlUnit:inst|ControlBus_o[4]  ;
+; -0.611 ; 0.500        ; 1.111          ; High Pulse Width ; clk   ; Rise       ; ControlUnit:inst|ControlBus_o[5]  ;
+; -0.611 ; 0.500        ; 1.111          ; Low Pulse Width  ; clk   ; Rise       ; ControlUnit:inst|ControlBus_o[5]  ;
+; -0.611 ; 0.500        ; 1.111          ; High Pulse Width ; clk   ; Rise       ; ControlUnit:inst|ControlBus_o[6]  ;
+; -0.611 ; 0.500        ; 1.111          ; Low Pulse Width  ; clk   ; Rise       ; ControlUnit:inst|ControlBus_o[6]  ;
+; -0.611 ; 0.500        ; 1.111          ; High Pulse Width ; clk   ; Rise       ; ControlUnit:inst|ControlBus_o[7]  ;
+; -0.611 ; 0.500        ; 1.111          ; Low Pulse Width  ; clk   ; Rise       ; ControlUnit:inst|ControlBus_o[7]  ;
+; -0.611 ; 0.500        ; 1.111          ; High Pulse Width ; clk   ; Rise       ; ControlUnit:inst|ControlBus_o[8]  ;
+; -0.611 ; 0.500        ; 1.111          ; Low Pulse Width  ; clk   ; Rise       ; ControlUnit:inst|ControlBus_o[8]  ;
+; -0.611 ; 0.500        ; 1.111          ; High Pulse Width ; clk   ; Rise       ; ControlUnit:inst|p_counter[0]     ;
+; -0.611 ; 0.500        ; 1.111          ; Low Pulse Width  ; clk   ; Rise       ; ControlUnit:inst|p_counter[0]     ;
+; -0.611 ; 0.500        ; 1.111          ; High Pulse Width ; clk   ; Rise       ; ControlUnit:inst|p_counter[1]     ;
+; -0.611 ; 0.500        ; 1.111          ; Low Pulse Width  ; clk   ; Rise       ; ControlUnit:inst|p_counter[1]     ;
+; -0.611 ; 0.500        ; 1.111          ; High Pulse Width ; clk   ; Rise       ; ControlUnit:inst|p_counter[2]     ;
+; -0.611 ; 0.500        ; 1.111          ; Low Pulse Width  ; clk   ; Rise       ; ControlUnit:inst|p_counter[2]     ;
+; -0.611 ; 0.500        ; 1.111          ; High Pulse Width ; clk   ; Rise       ; ControlUnit:inst|p_counter[3]     ;
+; -0.611 ; 0.500        ; 1.111          ; Low Pulse Width  ; clk   ; Rise       ; ControlUnit:inst|p_counter[3]     ;
+; -0.611 ; 0.500        ; 1.111          ; High Pulse Width ; clk   ; Rise       ; ControlUnit:inst|p_counter[4]     ;
+; -0.611 ; 0.500        ; 1.111          ; Low Pulse Width  ; clk   ; Rise       ; ControlUnit:inst|p_counter[4]     ;
+; -0.611 ; 0.500        ; 1.111          ; High Pulse Width ; clk   ; Rise       ; ControlUnit:inst|p_counter[5]     ;
+; -0.611 ; 0.500        ; 1.111          ; Low Pulse Width  ; clk   ; Rise       ; ControlUnit:inst|p_counter[5]     ;
+; -0.611 ; 0.500        ; 1.111          ; High Pulse Width ; clk   ; Rise       ; FAP:inst2|inst1                   ;
+; -0.611 ; 0.500        ; 1.111          ; Low Pulse Width  ; clk   ; Rise       ; FAP:inst2|inst1                   ;
+; -0.611 ; 0.500        ; 1.111          ; High Pulse Width ; clk   ; Rise       ; FAP:inst2|inst2                   ;
+; -0.611 ; 0.500        ; 1.111          ; Low Pulse Width  ; clk   ; Rise       ; FAP:inst2|inst2                   ;
+; -0.611 ; 0.500        ; 1.111          ; High Pulse Width ; clk   ; Rise       ; RALU:inst4|RON[0][0]              ;
+; -0.611 ; 0.500        ; 1.111          ; Low Pulse Width  ; clk   ; Rise       ; RALU:inst4|RON[0][0]              ;
+; -0.611 ; 0.500        ; 1.111          ; High Pulse Width ; clk   ; Rise       ; RALU:inst4|RON[0][1]              ;
+; -0.611 ; 0.500        ; 1.111          ; Low Pulse Width  ; clk   ; Rise       ; RALU:inst4|RON[0][1]              ;
+; -0.611 ; 0.500        ; 1.111          ; High Pulse Width ; clk   ; Rise       ; RALU:inst4|RON[0][2]              ;
+; -0.611 ; 0.500        ; 1.111          ; Low Pulse Width  ; clk   ; Rise       ; RALU:inst4|RON[0][2]              ;
+; -0.611 ; 0.500        ; 1.111          ; High Pulse Width ; clk   ; Rise       ; RALU:inst4|RON[0][3]              ;
+; -0.611 ; 0.500        ; 1.111          ; Low Pulse Width  ; clk   ; Rise       ; RALU:inst4|RON[0][3]              ;
+; -0.611 ; 0.500        ; 1.111          ; High Pulse Width ; clk   ; Rise       ; RALU:inst4|RON[1][0]              ;
+; -0.611 ; 0.500        ; 1.111          ; Low Pulse Width  ; clk   ; Rise       ; RALU:inst4|RON[1][0]              ;
+; -0.611 ; 0.500        ; 1.111          ; High Pulse Width ; clk   ; Rise       ; RALU:inst4|RON[1][1]              ;
+; -0.611 ; 0.500        ; 1.111          ; Low Pulse Width  ; clk   ; Rise       ; RALU:inst4|RON[1][1]              ;
+; -0.611 ; 0.500        ; 1.111          ; High Pulse Width ; clk   ; Rise       ; RALU:inst4|RON[1][2]              ;
+; -0.611 ; 0.500        ; 1.111          ; Low Pulse Width  ; clk   ; Rise       ; RALU:inst4|RON[1][2]              ;
+; -0.611 ; 0.500        ; 1.111          ; High Pulse Width ; clk   ; Rise       ; RALU:inst4|RON[1][3]              ;
+; -0.611 ; 0.500        ; 1.111          ; Low Pulse Width  ; clk   ; Rise       ; RALU:inst4|RON[1][3]              ;
+; -0.611 ; 0.500        ; 1.111          ; High Pulse Width ; clk   ; Rise       ; RALU:inst4|RON[2][0]              ;
+; -0.611 ; 0.500        ; 1.111          ; Low Pulse Width  ; clk   ; Rise       ; RALU:inst4|RON[2][0]              ;
+; -0.611 ; 0.500        ; 1.111          ; High Pulse Width ; clk   ; Rise       ; RALU:inst4|RON[2][1]              ;
+; -0.611 ; 0.500        ; 1.111          ; Low Pulse Width  ; clk   ; Rise       ; RALU:inst4|RON[2][1]              ;
+; -0.611 ; 0.500        ; 1.111          ; High Pulse Width ; clk   ; Rise       ; RALU:inst4|RON[2][2]              ;
+; -0.611 ; 0.500        ; 1.111          ; Low Pulse Width  ; clk   ; Rise       ; RALU:inst4|RON[2][2]              ;
+; -0.611 ; 0.500        ; 1.111          ; High Pulse Width ; clk   ; Rise       ; RALU:inst4|RON[2][3]              ;
+; -0.611 ; 0.500        ; 1.111          ; Low Pulse Width  ; clk   ; Rise       ; RALU:inst4|RON[2][3]              ;
+; -0.611 ; 0.500        ; 1.111          ; High Pulse Width ; clk   ; Rise       ; RALU:inst4|RON[3][0]              ;
+; -0.611 ; 0.500        ; 1.111          ; Low Pulse Width  ; clk   ; Rise       ; RALU:inst4|RON[3][0]              ;
+; -0.611 ; 0.500        ; 1.111          ; High Pulse Width ; clk   ; Rise       ; RALU:inst4|RON[3][1]              ;
+; -0.611 ; 0.500        ; 1.111          ; Low Pulse Width  ; clk   ; Rise       ; RALU:inst4|RON[3][1]              ;
+; -0.611 ; 0.500        ; 1.111          ; High Pulse Width ; clk   ; Rise       ; RALU:inst4|RON[3][2]              ;
+; -0.611 ; 0.500        ; 1.111          ; Low Pulse Width  ; clk   ; Rise       ; RALU:inst4|RON[3][2]              ;
+; -0.611 ; 0.500        ; 1.111          ; High Pulse Width ; clk   ; Rise       ; RALU:inst4|RON[3][3]              ;
+; -0.611 ; 0.500        ; 1.111          ; Low Pulse Width  ; clk   ; Rise       ; RALU:inst4|RON[3][3]              ;
+; -0.611 ; 0.500        ; 1.111          ; High Pulse Width ; clk   ; Rise       ; RALU:inst4|RON[4][0]              ;
+; -0.611 ; 0.500        ; 1.111          ; Low Pulse Width  ; clk   ; Rise       ; RALU:inst4|RON[4][0]              ;
+; -0.611 ; 0.500        ; 1.111          ; High Pulse Width ; clk   ; Rise       ; RALU:inst4|RON[4][1]              ;
+; -0.611 ; 0.500        ; 1.111          ; Low Pulse Width  ; clk   ; Rise       ; RALU:inst4|RON[4][1]              ;
+; -0.611 ; 0.500        ; 1.111          ; High Pulse Width ; clk   ; Rise       ; RALU:inst4|RON[4][2]              ;
+; -0.611 ; 0.500        ; 1.111          ; Low Pulse Width  ; clk   ; Rise       ; RALU:inst4|RON[4][2]              ;
+; -0.611 ; 0.500        ; 1.111          ; High Pulse Width ; clk   ; Rise       ; RALU:inst4|RON[4][3]              ;
+; -0.611 ; 0.500        ; 1.111          ; Low Pulse Width  ; clk   ; Rise       ; RALU:inst4|RON[4][3]              ;
+; -0.611 ; 0.500        ; 1.111          ; High Pulse Width ; clk   ; Rise       ; RALU:inst4|RON[5][0]              ;
+; -0.611 ; 0.500        ; 1.111          ; Low Pulse Width  ; clk   ; Rise       ; RALU:inst4|RON[5][0]              ;
+; -0.611 ; 0.500        ; 1.111          ; High Pulse Width ; clk   ; Rise       ; RALU:inst4|RON[5][1]              ;
+; -0.611 ; 0.500        ; 1.111          ; Low Pulse Width  ; clk   ; Rise       ; RALU:inst4|RON[5][1]              ;
+; -0.611 ; 0.500        ; 1.111          ; High Pulse Width ; clk   ; Rise       ; RALU:inst4|RON[5][2]              ;
+; -0.611 ; 0.500        ; 1.111          ; Low Pulse Width  ; clk   ; Rise       ; RALU:inst4|RON[5][2]              ;
+; -0.611 ; 0.500        ; 1.111          ; High Pulse Width ; clk   ; Rise       ; RALU:inst4|RON[5][3]              ;
+; -0.611 ; 0.500        ; 1.111          ; Low Pulse Width  ; clk   ; Rise       ; RALU:inst4|RON[5][3]              ;
+; -0.611 ; 0.500        ; 1.111          ; High Pulse Width ; clk   ; Rise       ; RALU:inst4|RON[6][0]              ;
+; -0.611 ; 0.500        ; 1.111          ; Low Pulse Width  ; clk   ; Rise       ; RALU:inst4|RON[6][0]              ;
+; -0.611 ; 0.500        ; 1.111          ; High Pulse Width ; clk   ; Rise       ; RALU:inst4|RON[6][1]              ;
+; -0.611 ; 0.500        ; 1.111          ; Low Pulse Width  ; clk   ; Rise       ; RALU:inst4|RON[6][1]              ;
+; -0.611 ; 0.500        ; 1.111          ; High Pulse Width ; clk   ; Rise       ; RALU:inst4|RON[6][2]              ;
+; -0.611 ; 0.500        ; 1.111          ; Low Pulse Width  ; clk   ; Rise       ; RALU:inst4|RON[6][2]              ;
+; -0.611 ; 0.500        ; 1.111          ; High Pulse Width ; clk   ; Rise       ; RALU:inst4|RON[6][3]              ;
+; -0.611 ; 0.500        ; 1.111          ; Low Pulse Width  ; clk   ; Rise       ; RALU:inst4|RON[6][3]              ;
+; -0.611 ; 0.500        ; 1.111          ; High Pulse Width ; clk   ; Rise       ; RALU:inst4|RON[7][0]              ;
+; -0.611 ; 0.500        ; 1.111          ; Low Pulse Width  ; clk   ; Rise       ; RALU:inst4|RON[7][0]              ;
+; -0.611 ; 0.500        ; 1.111          ; High Pulse Width ; clk   ; Rise       ; RALU:inst4|RON[7][1]              ;
++--------+--------------+----------------+------------------+-------+------------+-----------------------------------+
+
+
++------------------------------------------------------------------------+
+; Setup Times                                                            ;
++------------+------------+-------+-------+------------+-----------------+
+; Data Port  ; Clock Port ; Rise  ; Fall  ; Clock Edge ; Clock Reference ;
++------------+------------+-------+-------+------------+-----------------+
+; DataIn[*]  ; clk        ; 4.469 ; 4.469 ; Rise       ; clk             ;
+;  DataIn[0] ; clk        ; 4.328 ; 4.328 ; Rise       ; clk             ;
+;  DataIn[1] ; clk        ; 4.411 ; 4.411 ; Rise       ; clk             ;
+;  DataIn[2] ; clk        ; 4.234 ; 4.234 ; Rise       ; clk             ;
+;  DataIn[3] ; clk        ; 4.469 ; 4.469 ; Rise       ; clk             ;
+; reset      ; clk        ; 0.708 ; 0.708 ; Rise       ; clk             ;
++------------+------------+-------+-------+------------+-----------------+
+
+
++--------------------------------------------------------------------------+
+; Hold Times                                                               ;
++------------+------------+--------+--------+------------+-----------------+
+; Data Port  ; Clock Port ; Rise   ; Fall   ; Clock Edge ; Clock Reference ;
++------------+------------+--------+--------+------------+-----------------+
+; DataIn[*]  ; clk        ; -3.986 ; -3.986 ; Rise       ; clk             ;
+;  DataIn[0] ; clk        ; -4.080 ; -4.080 ; Rise       ; clk             ;
+;  DataIn[1] ; clk        ; -4.163 ; -4.163 ; Rise       ; clk             ;
+;  DataIn[2] ; clk        ; -3.986 ; -3.986 ; Rise       ; clk             ;
+;  DataIn[3] ; clk        ; -4.221 ; -4.221 ; Rise       ; clk             ;
+; reset      ; clk        ; 0.125  ; 0.125  ; Rise       ; clk             ;
++------------+------------+--------+--------+------------+-----------------+
+
+
++---------------------------------------------------------------------------+
+; Clock to Output Times                                                     ;
++-------------+------------+--------+--------+------------+-----------------+
+; Data Port   ; Clock Port ; Rise   ; Fall   ; Clock Edge ; Clock Reference ;
++-------------+------------+--------+--------+------------+-----------------+
+; CarryFlag   ; clk        ; 7.984  ; 7.984  ; Rise       ; clk             ;
+; DataOut[*]  ; clk        ; 11.188 ; 11.188 ; Rise       ; clk             ;
+;  DataOut[0] ; clk        ; 10.063 ; 10.063 ; Rise       ; clk             ;
+;  DataOut[1] ; clk        ; 10.433 ; 10.433 ; Rise       ; clk             ;
+;  DataOut[2] ; clk        ; 10.945 ; 10.945 ; Rise       ; clk             ;
+;  DataOut[3] ; clk        ; 11.188 ; 11.188 ; Rise       ; clk             ;
+; PortID[*]   ; clk        ; 8.639  ; 8.639  ; Rise       ; clk             ;
+;  PortID[0]  ; clk        ; 8.286  ; 8.286  ; Rise       ; clk             ;
+;  PortID[1]  ; clk        ; 8.639  ; 8.639  ; Rise       ; clk             ;
+;  PortID[2]  ; clk        ; 7.982  ; 7.982  ; Rise       ; clk             ;
+; PortRead    ; clk        ; 8.496  ; 8.496  ; Rise       ; clk             ;
+; ZeroFlag    ; clk        ; 8.228  ; 8.228  ; Rise       ; clk             ;
++-------------+------------+--------+--------+------------+-----------------+
+
+
++-------------------------------------------------------------------------+
+; Minimum Clock to Output Times                                           ;
++-------------+------------+-------+-------+------------+-----------------+
+; Data Port   ; Clock Port ; Rise  ; Fall  ; Clock Edge ; Clock Reference ;
++-------------+------------+-------+-------+------------+-----------------+
+; CarryFlag   ; clk        ; 7.984 ; 7.984 ; Rise       ; clk             ;
+; DataOut[*]  ; clk        ; 9.152 ; 9.152 ; Rise       ; clk             ;
+;  DataOut[0] ; clk        ; 9.386 ; 9.386 ; Rise       ; clk             ;
+;  DataOut[1] ; clk        ; 9.497 ; 9.497 ; Rise       ; clk             ;
+;  DataOut[2] ; clk        ; 9.155 ; 9.155 ; Rise       ; clk             ;
+;  DataOut[3] ; clk        ; 9.152 ; 9.152 ; Rise       ; clk             ;
+; PortID[*]   ; clk        ; 7.982 ; 7.982 ; Rise       ; clk             ;
+;  PortID[0]  ; clk        ; 8.286 ; 8.286 ; Rise       ; clk             ;
+;  PortID[1]  ; clk        ; 8.639 ; 8.639 ; Rise       ; clk             ;
+;  PortID[2]  ; clk        ; 7.982 ; 7.982 ; Rise       ; clk             ;
+; PortRead    ; clk        ; 8.145 ; 8.145 ; Rise       ; clk             ;
+; ZeroFlag    ; clk        ; 8.228 ; 8.228 ; Rise       ; clk             ;
++-------------+------------+-------+-------+------------+-----------------+
+
+
++--------------------------------+
+; Fast Model Setup Summary       ;
++-------+--------+---------------+
+; Clock ; Slack  ; End Point TNS ;
++-------+--------+---------------+
+; clk   ; -0.787 ; -28.710       ;
++-------+--------+---------------+
+
+
++-------------------------------+
+; Fast Model Hold Summary       ;
++-------+-------+---------------+
+; Clock ; Slack ; End Point TNS ;
++-------+-------+---------------+
+; clk   ; 0.477 ; 0.000         ;
++-------+-------+---------------+
+
+
+-------------------------------
+; Fast Model Recovery Summary ;
+-------------------------------
+No paths to report.
+
+
+------------------------------
+; Fast Model Removal Summary ;
+------------------------------
+No paths to report.
+
+
++----------------------------------------+
+; Fast Model Minimum Pulse Width Summary ;
++-------+--------+-----------------------+
+; Clock ; Slack  ; End Point TNS         ;
++-------+--------+-----------------------+
+; clk   ; -1.380 ; -61.380               ;
++-------+--------+-----------------------+
+
+
++------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Fast Model Setup: 'clk'                                                                                                                              ;
++--------+-----------------------------------+-----------------------------------+--------------+-------------+--------------+------------+------------+
+; Slack  ; From Node                         ; To Node                           ; Launch Clock ; Latch Clock ; Relationship ; Clock Skew ; Data Delay ;
++--------+-----------------------------------+-----------------------------------+--------------+-------------+--------------+------------+------------+
+; -0.787 ; RALU:inst4|RgA[2]                 ; RALU:inst4|RON[4][3]              ; clk          ; clk         ; 1.000        ; -0.001     ; 1.818      ;
+; -0.780 ; RALU:inst4|RgA[2]                 ; RALU:inst4|RON[0][3]              ; clk          ; clk         ; 1.000        ; 0.000      ; 1.812      ;
+; -0.777 ; ControlUnit:inst|ControlBus_o[13] ; RALU:inst4|RON[4][3]              ; clk          ; clk         ; 1.000        ; -0.001     ; 1.808      ;
+; -0.770 ; ControlUnit:inst|ControlBus_o[13] ; RALU:inst4|RON[0][3]              ; clk          ; clk         ; 1.000        ; 0.000      ; 1.802      ;
+; -0.769 ; RALU:inst4|RgA[1]                 ; RALU:inst4|RON[4][3]              ; clk          ; clk         ; 1.000        ; -0.001     ; 1.800      ;
+; -0.762 ; RALU:inst4|RgA[1]                 ; RALU:inst4|RON[0][3]              ; clk          ; clk         ; 1.000        ; 0.000      ; 1.794      ;
+; -0.715 ; RALU:inst4|RgA[2]                 ; FAP:inst2|inst2                   ; clk          ; clk         ; 1.000        ; 0.000      ; 1.747      ;
+; -0.710 ; ControlUnit:inst|ControlBus_o[14] ; RALU:inst4|RON[4][3]              ; clk          ; clk         ; 1.000        ; -0.001     ; 1.741      ;
+; -0.708 ; RALU:inst4|RgA[2]                 ; RALU:inst4|RON[2][3]              ; clk          ; clk         ; 1.000        ; -0.006     ; 1.734      ;
+; -0.707 ; RALU:inst4|RgA[2]                 ; RALU:inst4|RON[3][3]              ; clk          ; clk         ; 1.000        ; -0.006     ; 1.733      ;
+; -0.705 ; ControlUnit:inst|ControlBus_o[13] ; FAP:inst2|inst2                   ; clk          ; clk         ; 1.000        ; 0.000      ; 1.737      ;
+; -0.704 ; ControlUnit:inst|ControlBus_o[5]  ; RALU:inst4|RgB[1]                 ; clk          ; clk         ; 1.000        ; 0.001      ; 1.737      ;
+; -0.703 ; ControlUnit:inst|ControlBus_o[14] ; RALU:inst4|RON[0][3]              ; clk          ; clk         ; 1.000        ; 0.000      ; 1.735      ;
+; -0.698 ; ControlUnit:inst|ControlBus_o[13] ; RALU:inst4|RON[2][3]              ; clk          ; clk         ; 1.000        ; -0.006     ; 1.724      ;
+; -0.697 ; ControlUnit:inst|ControlBus_o[5]  ; RALU:inst4|RgB[3]                 ; clk          ; clk         ; 1.000        ; 0.001      ; 1.730      ;
+; -0.697 ; RALU:inst4|RgA[1]                 ; FAP:inst2|inst2                   ; clk          ; clk         ; 1.000        ; 0.000      ; 1.729      ;
+; -0.697 ; ControlUnit:inst|ControlBus_o[13] ; RALU:inst4|RON[3][3]              ; clk          ; clk         ; 1.000        ; -0.006     ; 1.723      ;
+; -0.695 ; RALU:inst4|RgA[1]                 ; RALU:inst4|RON[2][1]              ; clk          ; clk         ; 1.000        ; -0.006     ; 1.721      ;
+; -0.693 ; RALU:inst4|RgA[1]                 ; RALU:inst4|RON[3][1]              ; clk          ; clk         ; 1.000        ; -0.006     ; 1.719      ;
+; -0.690 ; RALU:inst4|RgB[0]                 ; RALU:inst4|RON[4][3]              ; clk          ; clk         ; 1.000        ; -0.001     ; 1.721      ;
+; -0.690 ; RALU:inst4|RgA[1]                 ; RALU:inst4|RON[2][3]              ; clk          ; clk         ; 1.000        ; -0.006     ; 1.716      ;
+; -0.689 ; RALU:inst4|RgA[1]                 ; RALU:inst4|RON[3][3]              ; clk          ; clk         ; 1.000        ; -0.006     ; 1.715      ;
+; -0.683 ; ControlUnit:inst|ControlBus_o[5]  ; RALU:inst4|RgB[2]                 ; clk          ; clk         ; 1.000        ; 0.001      ; 1.716      ;
+; -0.683 ; RALU:inst4|RgB[0]                 ; RALU:inst4|RON[0][3]              ; clk          ; clk         ; 1.000        ; 0.000      ; 1.715      ;
+; -0.676 ; RALU:inst4|RgB[1]                 ; RALU:inst4|RON[4][3]              ; clk          ; clk         ; 1.000        ; -0.001     ; 1.707      ;
+; -0.675 ; RALU:inst4|RgA[2]                 ; RALU:inst4|RON[7][3]              ; clk          ; clk         ; 1.000        ; -0.001     ; 1.706      ;
+; -0.674 ; RALU:inst4|RgA[2]                 ; RALU:inst4|RON[5][3]              ; clk          ; clk         ; 1.000        ; -0.001     ; 1.705      ;
+; -0.669 ; RALU:inst4|RgB[1]                 ; RALU:inst4|RON[0][3]              ; clk          ; clk         ; 1.000        ; 0.000      ; 1.701      ;
+; -0.665 ; ControlUnit:inst|ControlBus_o[13] ; RALU:inst4|RON[7][3]              ; clk          ; clk         ; 1.000        ; -0.001     ; 1.696      ;
+; -0.664 ; ControlUnit:inst|ControlBus_o[13] ; RALU:inst4|RON[5][3]              ; clk          ; clk         ; 1.000        ; -0.001     ; 1.695      ;
+; -0.663 ; RALU:inst4|RgA[1]                 ; RALU:inst4|RON[6][1]              ; clk          ; clk         ; 1.000        ; 0.000      ; 1.695      ;
+; -0.663 ; RALU:inst4|RgB[2]                 ; RALU:inst4|RON[4][3]              ; clk          ; clk         ; 1.000        ; -0.001     ; 1.694      ;
+; -0.663 ; RALU:inst4|RgA[0]                 ; RALU:inst4|RON[4][3]              ; clk          ; clk         ; 1.000        ; -0.001     ; 1.694      ;
+; -0.662 ; RALU:inst4|RgA[1]                 ; RALU:inst4|RON[0][1]              ; clk          ; clk         ; 1.000        ; 0.000      ; 1.694      ;
+; -0.657 ; RALU:inst4|RgA[1]                 ; RALU:inst4|RON[7][3]              ; clk          ; clk         ; 1.000        ; -0.001     ; 1.688      ;
+; -0.656 ; RALU:inst4|RgB[2]                 ; RALU:inst4|RON[0][3]              ; clk          ; clk         ; 1.000        ; 0.000      ; 1.688      ;
+; -0.656 ; RALU:inst4|RgA[0]                 ; RALU:inst4|RON[0][3]              ; clk          ; clk         ; 1.000        ; 0.000      ; 1.688      ;
+; -0.656 ; RALU:inst4|RgA[1]                 ; RALU:inst4|RON[5][3]              ; clk          ; clk         ; 1.000        ; -0.001     ; 1.687      ;
+; -0.638 ; ControlUnit:inst|ControlBus_o[14] ; FAP:inst2|inst2                   ; clk          ; clk         ; 1.000        ; 0.000      ; 1.670      ;
+; -0.636 ; ControlUnit:inst|ControlBus_o[14] ; RALU:inst4|RON[2][1]              ; clk          ; clk         ; 1.000        ; -0.006     ; 1.662      ;
+; -0.634 ; ControlUnit:inst|ControlBus_o[14] ; RALU:inst4|RON[3][1]              ; clk          ; clk         ; 1.000        ; -0.006     ; 1.660      ;
+; -0.631 ; ControlUnit:inst|ControlBus_o[14] ; RALU:inst4|RON[2][3]              ; clk          ; clk         ; 1.000        ; -0.006     ; 1.657      ;
+; -0.630 ; ControlUnit:inst|ControlBus_o[14] ; RALU:inst4|RON[3][3]              ; clk          ; clk         ; 1.000        ; -0.006     ; 1.656      ;
+; -0.629 ; ControlUnit:inst|ControlBus_o[15] ; RALU:inst4|RON[4][3]              ; clk          ; clk         ; 1.000        ; -0.001     ; 1.660      ;
+; -0.629 ; ControlUnit:inst|ControlBus_o[13] ; RALU:inst4|RON[2][1]              ; clk          ; clk         ; 1.000        ; -0.006     ; 1.655      ;
+; -0.627 ; ControlUnit:inst|ControlBus_o[13] ; RALU:inst4|RON[3][1]              ; clk          ; clk         ; 1.000        ; -0.006     ; 1.653      ;
+; -0.624 ; ControlUnit:inst|p_counter[1]     ; ControlUnit:inst|ControlBus_o[14] ; clk          ; clk         ; 1.000        ; 0.002      ; 1.658      ;
+; -0.624 ; ControlUnit:inst|p_counter[1]     ; ControlUnit:inst|ControlBus_o[15] ; clk          ; clk         ; 1.000        ; 0.002      ; 1.658      ;
+; -0.624 ; ControlUnit:inst|p_counter[1]     ; ControlUnit:inst|ControlBus_o[12] ; clk          ; clk         ; 1.000        ; 0.002      ; 1.658      ;
+; -0.624 ; ControlUnit:inst|ControlBus_o[15] ; RALU:inst4|RON[2][1]              ; clk          ; clk         ; 1.000        ; -0.006     ; 1.650      ;
+; -0.623 ; RALU:inst4|RgA[1]                 ; RALU:inst4|RON[4][1]              ; clk          ; clk         ; 1.000        ; -0.001     ; 1.654      ;
+; -0.623 ; RALU:inst4|RgA[3]                 ; RALU:inst4|RON[4][3]              ; clk          ; clk         ; 1.000        ; -0.001     ; 1.654      ;
+; -0.622 ; ControlUnit:inst|p_counter[1]     ; ControlUnit:inst|ControlBus_o[7]  ; clk          ; clk         ; 1.000        ; 0.002      ; 1.656      ;
+; -0.622 ; ControlUnit:inst|ControlBus_o[13] ; RALU:inst4|RON[5][2]              ; clk          ; clk         ; 1.000        ; -0.001     ; 1.653      ;
+; -0.622 ; ControlUnit:inst|ControlBus_o[15] ; RALU:inst4|RON[0][3]              ; clk          ; clk         ; 1.000        ; 0.000      ; 1.654      ;
+; -0.622 ; ControlUnit:inst|ControlBus_o[15] ; RALU:inst4|RON[3][1]              ; clk          ; clk         ; 1.000        ; -0.006     ; 1.648      ;
+; -0.619 ; ControlUnit:inst|ControlBus_o[13] ; RALU:inst4|RON[7][2]              ; clk          ; clk         ; 1.000        ; -0.001     ; 1.650      ;
+; -0.618 ; RALU:inst4|RgB[0]                 ; FAP:inst2|inst2                   ; clk          ; clk         ; 1.000        ; 0.000      ; 1.650      ;
+; -0.616 ; RALU:inst4|RgA[3]                 ; RALU:inst4|RON[0][3]              ; clk          ; clk         ; 1.000        ; 0.000      ; 1.648      ;
+; -0.613 ; ControlUnit:inst|ControlBus_o[13] ; RALU:inst4|RON[6][2]              ; clk          ; clk         ; 1.000        ; 0.000      ; 1.645      ;
+; -0.611 ; RALU:inst4|RgB[0]                 ; RALU:inst4|RON[2][3]              ; clk          ; clk         ; 1.000        ; -0.006     ; 1.637      ;
+; -0.610 ; RALU:inst4|RgB[0]                 ; RALU:inst4|RON[3][3]              ; clk          ; clk         ; 1.000        ; -0.006     ; 1.636      ;
+; -0.608 ; ControlUnit:inst|p_counter[3]     ; ControlUnit:inst|ControlBus_o[14] ; clk          ; clk         ; 1.000        ; 0.002      ; 1.642      ;
+; -0.608 ; ControlUnit:inst|p_counter[3]     ; ControlUnit:inst|ControlBus_o[15] ; clk          ; clk         ; 1.000        ; 0.002      ; 1.642      ;
+; -0.608 ; ControlUnit:inst|p_counter[3]     ; ControlUnit:inst|ControlBus_o[12] ; clk          ; clk         ; 1.000        ; 0.002      ; 1.642      ;
+; -0.606 ; ControlUnit:inst|ControlBus_o[4]  ; RALU:inst4|RgB[1]                 ; clk          ; clk         ; 1.000        ; 0.001      ; 1.639      ;
+; -0.606 ; ControlUnit:inst|p_counter[3]     ; ControlUnit:inst|ControlBus_o[7]  ; clk          ; clk         ; 1.000        ; 0.002      ; 1.640      ;
+; -0.605 ; ControlUnit:inst|ControlBus_o[4]  ; RALU:inst4|RgA[0]                 ; clk          ; clk         ; 1.000        ; 0.001      ; 1.638      ;
+; -0.604 ; RALU:inst4|RgB[1]                 ; FAP:inst2|inst2                   ; clk          ; clk         ; 1.000        ; 0.000      ; 1.636      ;
+; -0.604 ; ControlUnit:inst|ControlBus_o[14] ; RALU:inst4|RON[6][1]              ; clk          ; clk         ; 1.000        ; 0.000      ; 1.636      ;
+; -0.603 ; ControlUnit:inst|ControlBus_o[14] ; RALU:inst4|RON[0][1]              ; clk          ; clk         ; 1.000        ; 0.000      ; 1.635      ;
+; -0.602 ; RALU:inst4|RgB[1]                 ; RALU:inst4|RON[2][1]              ; clk          ; clk         ; 1.000        ; -0.006     ; 1.628      ;
+; -0.600 ; RALU:inst4|RgB[1]                 ; RALU:inst4|RON[3][1]              ; clk          ; clk         ; 1.000        ; -0.006     ; 1.626      ;
+; -0.600 ; RALU:inst4|RgB[0]                 ; RALU:inst4|RON[2][1]              ; clk          ; clk         ; 1.000        ; -0.006     ; 1.626      ;
+; -0.599 ; ControlUnit:inst|ControlBus_o[4]  ; RALU:inst4|RgB[3]                 ; clk          ; clk         ; 1.000        ; 0.001      ; 1.632      ;
+; -0.598 ; ControlUnit:inst|ControlBus_o[14] ; RALU:inst4|RON[7][3]              ; clk          ; clk         ; 1.000        ; -0.001     ; 1.629      ;
+; -0.598 ; RALU:inst4|RgB[0]                 ; RALU:inst4|RON[3][1]              ; clk          ; clk         ; 1.000        ; -0.006     ; 1.624      ;
+; -0.597 ; RALU:inst4|RgB[1]                 ; RALU:inst4|RON[2][3]              ; clk          ; clk         ; 1.000        ; -0.006     ; 1.623      ;
+; -0.597 ; ControlUnit:inst|ControlBus_o[13] ; RALU:inst4|RON[6][1]              ; clk          ; clk         ; 1.000        ; 0.000      ; 1.629      ;
+; -0.597 ; ControlUnit:inst|ControlBus_o[14] ; RALU:inst4|RON[5][3]              ; clk          ; clk         ; 1.000        ; -0.001     ; 1.628      ;
+; -0.596 ; ControlUnit:inst|ControlBus_o[13] ; RALU:inst4|RON[4][2]              ; clk          ; clk         ; 1.000        ; -0.001     ; 1.627      ;
+; -0.596 ; RALU:inst4|RgB[1]                 ; RALU:inst4|RON[3][3]              ; clk          ; clk         ; 1.000        ; -0.006     ; 1.622      ;
+; -0.596 ; ControlUnit:inst|ControlBus_o[13] ; RALU:inst4|RON[0][1]              ; clk          ; clk         ; 1.000        ; 0.000      ; 1.628      ;
+; -0.594 ; ControlUnit:inst|ControlBus_o[4]  ; RALU:inst4|RgB[2]                 ; clk          ; clk         ; 1.000        ; 0.001      ; 1.627      ;
+; -0.592 ; ControlUnit:inst|ControlBus_o[15] ; RALU:inst4|RON[6][1]              ; clk          ; clk         ; 1.000        ; 0.000      ; 1.624      ;
+; -0.591 ; RALU:inst4|RgB[2]                 ; FAP:inst2|inst2                   ; clk          ; clk         ; 1.000        ; 0.000      ; 1.623      ;
+; -0.591 ; RALU:inst4|RgA[0]                 ; FAP:inst2|inst2                   ; clk          ; clk         ; 1.000        ; 0.000      ; 1.623      ;
+; -0.591 ; ControlUnit:inst|ControlBus_o[15] ; RALU:inst4|RON[0][1]              ; clk          ; clk         ; 1.000        ; 0.000      ; 1.623      ;
+; -0.589 ; RALU:inst4|RgA[1]                 ; RALU:inst4|RON[5][2]              ; clk          ; clk         ; 1.000        ; -0.001     ; 1.620      ;
+; -0.586 ; RALU:inst4|RgA[1]                 ; RALU:inst4|RON[1][1]              ; clk          ; clk         ; 1.000        ; 0.000      ; 1.618      ;
+; -0.586 ; RALU:inst4|RgA[1]                 ; RALU:inst4|RON[7][2]              ; clk          ; clk         ; 1.000        ; -0.001     ; 1.617      ;
+; -0.586 ; ControlUnit:inst|ControlBus_o[5]  ; RALU:inst4|RgA[0]                 ; clk          ; clk         ; 1.000        ; 0.001      ; 1.619      ;
+; -0.584 ; RALU:inst4|RgB[2]                 ; RALU:inst4|RON[2][3]              ; clk          ; clk         ; 1.000        ; -0.006     ; 1.610      ;
+; -0.584 ; RALU:inst4|RgA[0]                 ; RALU:inst4|RON[2][3]              ; clk          ; clk         ; 1.000        ; -0.006     ; 1.610      ;
+; -0.583 ; RALU:inst4|RgB[2]                 ; RALU:inst4|RON[3][3]              ; clk          ; clk         ; 1.000        ; -0.006     ; 1.609      ;
+; -0.583 ; RALU:inst4|RgA[0]                 ; RALU:inst4|RON[3][3]              ; clk          ; clk         ; 1.000        ; -0.006     ; 1.609      ;
+; -0.581 ; ControlUnit:inst|ControlBus_o[4]  ; RALU:inst4|RgB[0]                 ; clk          ; clk         ; 1.000        ; 0.001      ; 1.614      ;
+; -0.581 ; RALU:inst4|RgA[2]                 ; RALU:inst4|RON[6][3]              ; clk          ; clk         ; 1.000        ; 0.000      ; 1.613      ;
+; -0.581 ; RALU:inst4|RgA[2]                 ; RALU:inst4|RON[1][3]              ; clk          ; clk         ; 1.000        ; 0.000      ; 1.613      ;
+; -0.580 ; RALU:inst4|RgA[1]                 ; RALU:inst4|RON[6][2]              ; clk          ; clk         ; 1.000        ; 0.000      ; 1.612      ;
++--------+-----------------------------------+-----------------------------------+--------------+-------------+--------------+------------+------------+
+
+
++-----------------------------------------------------------------------------------------------------------------------------------------------------+
+; Fast Model Hold: 'clk'                                                                                                                              ;
++-------+-----------------------------------+-----------------------------------+--------------+-------------+--------------+------------+------------+
+; Slack ; From Node                         ; To Node                           ; Launch Clock ; Latch Clock ; Relationship ; Clock Skew ; Data Delay ;
++-------+-----------------------------------+-----------------------------------+--------------+-------------+--------------+------------+------------+
+; 0.477 ; ControlUnit:inst|ControlBus_o[8]  ; RALU:inst4|RgA[0]                 ; clk          ; clk         ; 0.000        ; 0.000      ; 0.629      ;
+; 0.477 ; ControlUnit:inst|ControlBus_o[8]  ; RALU:inst4|RgA[1]                 ; clk          ; clk         ; 0.000        ; 0.000      ; 0.629      ;
+; 0.477 ; ControlUnit:inst|ControlBus_o[8]  ; RALU:inst4|RgA[2]                 ; clk          ; clk         ; 0.000        ; 0.000      ; 0.629      ;
+; 0.477 ; ControlUnit:inst|ControlBus_o[8]  ; RALU:inst4|RgA[3]                 ; clk          ; clk         ; 0.000        ; 0.000      ; 0.629      ;
+; 0.480 ; RALU:inst4|RgB[3]                 ; FAP:inst2|inst1                   ; clk          ; clk         ; 0.000        ; 0.000      ; 0.632      ;
+; 0.496 ; ControlUnit:inst|p_counter[1]     ; ControlUnit:inst|ControlBus_o[6]  ; clk          ; clk         ; 0.000        ; 0.001      ; 0.649      ;
+; 0.514 ; ControlUnit:inst|ControlBus_o[0]  ; RALU:inst4|RgA[0]                 ; clk          ; clk         ; 0.000        ; 0.000      ; 0.666      ;
+; 0.514 ; ControlUnit:inst|ControlBus_o[0]  ; RALU:inst4|RgA[1]                 ; clk          ; clk         ; 0.000        ; 0.000      ; 0.666      ;
+; 0.514 ; ControlUnit:inst|ControlBus_o[0]  ; RALU:inst4|RgA[2]                 ; clk          ; clk         ; 0.000        ; 0.000      ; 0.666      ;
+; 0.514 ; ControlUnit:inst|ControlBus_o[0]  ; RALU:inst4|RgA[3]                 ; clk          ; clk         ; 0.000        ; 0.000      ; 0.666      ;
+; 0.524 ; ControlUnit:inst|ControlBus_o[2]  ; RALU:inst4|RgB[0]                 ; clk          ; clk         ; 0.000        ; 0.000      ; 0.676      ;
+; 0.524 ; ControlUnit:inst|ControlBus_o[2]  ; RALU:inst4|RgB[1]                 ; clk          ; clk         ; 0.000        ; 0.000      ; 0.676      ;
+; 0.524 ; ControlUnit:inst|ControlBus_o[2]  ; RALU:inst4|RgB[2]                 ; clk          ; clk         ; 0.000        ; 0.000      ; 0.676      ;
+; 0.524 ; ControlUnit:inst|ControlBus_o[2]  ; RALU:inst4|RgB[3]                 ; clk          ; clk         ; 0.000        ; 0.000      ; 0.676      ;
+; 0.528 ; ControlUnit:inst|p_counter[5]     ; ControlUnit:inst|ControlBus_o[6]  ; clk          ; clk         ; 0.000        ; 0.001      ; 0.681      ;
+; 0.549 ; ControlUnit:inst|p_counter[5]     ; ControlUnit:inst|ControlBus_o[0]  ; clk          ; clk         ; 0.000        ; 0.002      ; 0.703      ;
+; 0.551 ; ControlUnit:inst|p_counter[5]     ; ControlUnit:inst|ControlBus_o[8]  ; clk          ; clk         ; 0.000        ; 0.002      ; 0.705      ;
+; 0.561 ; ControlUnit:inst|ControlBus_o[12] ; RALU:inst4|RON[0][0]              ; clk          ; clk         ; 0.000        ; 0.000      ; 0.713      ;
+; 0.573 ; ControlUnit:inst|ControlBus_o[11] ; RALU:inst4|RON[0][0]              ; clk          ; clk         ; 0.000        ; 0.000      ; 0.725      ;
+; 0.579 ; ControlUnit:inst|ControlBus_o[6]  ; RALU:inst4|RgA[2]                 ; clk          ; clk         ; 0.000        ; 0.001      ; 0.732      ;
+; 0.580 ; ControlUnit:inst|ControlBus_o[6]  ; RALU:inst4|RgA[1]                 ; clk          ; clk         ; 0.000        ; 0.001      ; 0.733      ;
+; 0.588 ; ControlUnit:inst|p_counter[4]     ; ControlUnit:inst|ControlBus_o[7]  ; clk          ; clk         ; 0.000        ; 0.002      ; 0.742      ;
+; 0.589 ; ControlUnit:inst|p_counter[0]     ; ControlUnit:inst|ControlBus_o[11] ; clk          ; clk         ; 0.000        ; 0.002      ; 0.743      ;
+; 0.595 ; ControlUnit:inst|p_counter[2]     ; ControlUnit:inst|ControlBus_o[6]  ; clk          ; clk         ; 0.000        ; 0.001      ; 0.748      ;
+; 0.598 ; ControlUnit:inst|p_counter[4]     ; ControlUnit:inst|p_counter[4]     ; clk          ; clk         ; 0.000        ; 0.000      ; 0.750      ;
+; 0.613 ; ControlUnit:inst|p_counter[3]     ; ControlUnit:inst|ControlBus_o[2]  ; clk          ; clk         ; 0.000        ; 0.002      ; 0.767      ;
+; 0.615 ; ControlUnit:inst|p_counter[2]     ; ControlUnit:inst|ControlBus_o[12] ; clk          ; clk         ; 0.000        ; 0.002      ; 0.769      ;
+; 0.618 ; ControlUnit:inst|p_counter[3]     ; ControlUnit:inst|ControlBus_o[14] ; clk          ; clk         ; 0.000        ; 0.002      ; 0.772      ;
+; 0.622 ; ControlUnit:inst|p_counter[4]     ; ControlUnit:inst|ControlBus_o[0]  ; clk          ; clk         ; 0.000        ; 0.002      ; 0.776      ;
+; 0.626 ; ControlUnit:inst|p_counter[4]     ; ControlUnit:inst|ControlBus_o[8]  ; clk          ; clk         ; 0.000        ; 0.002      ; 0.780      ;
+; 0.627 ; ControlUnit:inst|p_counter[2]     ; ControlUnit:inst|p_counter[2]     ; clk          ; clk         ; 0.000        ; 0.000      ; 0.779      ;
+; 0.639 ; ControlUnit:inst|p_counter[5]     ; ControlUnit:inst|p_counter[3]     ; clk          ; clk         ; 0.000        ; 0.000      ; 0.791      ;
+; 0.639 ; ControlUnit:inst|p_counter[5]     ; ControlUnit:inst|p_counter[0]     ; clk          ; clk         ; 0.000        ; 0.000      ; 0.791      ;
+; 0.639 ; ControlUnit:inst|p_counter[5]     ; ControlUnit:inst|p_counter[2]     ; clk          ; clk         ; 0.000        ; 0.000      ; 0.791      ;
+; 0.640 ; ControlUnit:inst|p_counter[5]     ; ControlUnit:inst|p_counter[5]     ; clk          ; clk         ; 0.000        ; 0.000      ; 0.792      ;
+; 0.642 ; ControlUnit:inst|p_counter[5]     ; ControlUnit:inst|p_counter[1]     ; clk          ; clk         ; 0.000        ; 0.000      ; 0.794      ;
+; 0.642 ; ControlUnit:inst|p_counter[4]     ; ControlUnit:inst|ControlBus_o[6]  ; clk          ; clk         ; 0.000        ; 0.001      ; 0.795      ;
+; 0.649 ; ControlUnit:inst|ControlBus_o[13] ; FAP:inst2|inst1                   ; clk          ; clk         ; 0.000        ; 0.000      ; 0.801      ;
+; 0.653 ; ControlUnit:inst|p_counter[0]     ; ControlUnit:inst|ControlBus_o[6]  ; clk          ; clk         ; 0.000        ; 0.001      ; 0.806      ;
+; 0.655 ; ControlUnit:inst|p_counter[2]     ; ControlUnit:inst|ControlBus_o[8]  ; clk          ; clk         ; 0.000        ; 0.002      ; 0.809      ;
+; 0.656 ; ControlUnit:inst|p_counter[4]     ; ControlUnit:inst|p_counter[2]     ; clk          ; clk         ; 0.000        ; 0.000      ; 0.808      ;
+; 0.657 ; ControlUnit:inst|ControlBus_o[14] ; FAP:inst2|inst1                   ; clk          ; clk         ; 0.000        ; 0.000      ; 0.809      ;
+; 0.657 ; ControlUnit:inst|p_counter[4]     ; ControlUnit:inst|p_counter[1]     ; clk          ; clk         ; 0.000        ; 0.000      ; 0.809      ;
+; 0.663 ; ControlUnit:inst|ControlBus_o[14] ; RALU:inst4|RON[0][0]              ; clk          ; clk         ; 0.000        ; 0.000      ; 0.815      ;
+; 0.674 ; ControlUnit:inst|ControlBus_o[6]  ; RALU:inst4|RgA[3]                 ; clk          ; clk         ; 0.000        ; 0.001      ; 0.827      ;
+; 0.675 ; ControlUnit:inst|p_counter[1]     ; ControlUnit:inst|p_counter[1]     ; clk          ; clk         ; 0.000        ; 0.000      ; 0.827      ;
+; 0.682 ; ControlUnit:inst|p_counter[0]     ; ControlUnit:inst|p_counter[0]     ; clk          ; clk         ; 0.000        ; 0.000      ; 0.834      ;
+; 0.683 ; ControlUnit:inst|p_counter[2]     ; ControlUnit:inst|ControlBus_o[2]  ; clk          ; clk         ; 0.000        ; 0.002      ; 0.837      ;
+; 0.684 ; RALU:inst4|RgA[0]                 ; RALU:inst4|RON[0][0]              ; clk          ; clk         ; 0.000        ; 0.000      ; 0.836      ;
+; 0.693 ; RALU:inst4|RgB[1]                 ; FAP:inst2|inst1                   ; clk          ; clk         ; 0.000        ; 0.000      ; 0.845      ;
+; 0.706 ; FAP:inst2|inst2                   ; ControlUnit:inst|p_counter[1]     ; clk          ; clk         ; 0.000        ; -0.002     ; 0.856      ;
+; 0.707 ; ControlUnit:inst|p_counter[3]     ; ControlUnit:inst|p_counter[3]     ; clk          ; clk         ; 0.000        ; 0.000      ; 0.859      ;
+; 0.711 ; RALU:inst4|RgB[0]                 ; RALU:inst4|RON[0][0]              ; clk          ; clk         ; 0.000        ; 0.000      ; 0.863      ;
+; 0.712 ; FAP:inst2|inst2                   ; ControlUnit:inst|p_counter[4]     ; clk          ; clk         ; 0.000        ; -0.002     ; 0.862      ;
+; 0.712 ; FAP:inst2|inst2                   ; ControlUnit:inst|p_counter[5]     ; clk          ; clk         ; 0.000        ; -0.002     ; 0.862      ;
+; 0.713 ; FAP:inst2|inst2                   ; ControlUnit:inst|p_counter[2]     ; clk          ; clk         ; 0.000        ; -0.002     ; 0.863      ;
+; 0.713 ; FAP:inst2|inst2                   ; ControlUnit:inst|p_counter[3]     ; clk          ; clk         ; 0.000        ; -0.002     ; 0.863      ;
+; 0.713 ; FAP:inst2|inst2                   ; ControlUnit:inst|p_counter[0]     ; clk          ; clk         ; 0.000        ; -0.002     ; 0.863      ;
+; 0.714 ; ControlUnit:inst|p_counter[1]     ; ControlUnit:inst|ControlBus_o[2]  ; clk          ; clk         ; 0.000        ; 0.002      ; 0.868      ;
+; 0.715 ; ControlUnit:inst|p_counter[1]     ; ControlUnit:inst|ControlBus_o[11] ; clk          ; clk         ; 0.000        ; 0.002      ; 0.869      ;
+; 0.720 ; ControlUnit:inst|p_counter[1]     ; ControlUnit:inst|ControlBus_o[15] ; clk          ; clk         ; 0.000        ; 0.002      ; 0.874      ;
+; 0.729 ; ControlUnit:inst|ControlBus_o[13] ; RALU:inst4|RON[0][0]              ; clk          ; clk         ; 0.000        ; 0.000      ; 0.881      ;
+; 0.733 ; ControlUnit:inst|p_counter[2]     ; ControlUnit:inst|ControlBus_o[15] ; clk          ; clk         ; 0.000        ; 0.002      ; 0.887      ;
+; 0.734 ; ControlUnit:inst|p_counter[0]     ; ControlUnit:inst|ControlBus_o[8]  ; clk          ; clk         ; 0.000        ; 0.002      ; 0.888      ;
+; 0.735 ; ControlUnit:inst|p_counter[5]     ; ControlUnit:inst|ControlBus_o[2]  ; clk          ; clk         ; 0.000        ; 0.002      ; 0.889      ;
+; 0.738 ; ControlUnit:inst|p_counter[1]     ; ControlUnit:inst|p_counter[2]     ; clk          ; clk         ; 0.000        ; 0.000      ; 0.890      ;
+; 0.741 ; ControlUnit:inst|ControlBus_o[12] ; RALU:inst4|RON[6][3]              ; clk          ; clk         ; 0.000        ; 0.000      ; 0.893      ;
+; 0.741 ; ControlUnit:inst|ControlBus_o[12] ; RALU:inst4|RON[1][3]              ; clk          ; clk         ; 0.000        ; 0.000      ; 0.893      ;
+; 0.741 ; ControlUnit:inst|p_counter[3]     ; ControlUnit:inst|p_counter[4]     ; clk          ; clk         ; 0.000        ; 0.000      ; 0.893      ;
+; 0.745 ; ControlUnit:inst|p_counter[5]     ; ControlUnit:inst|ControlBus_o[5]  ; clk          ; clk         ; 0.000        ; 0.001      ; 0.898      ;
+; 0.746 ; ControlUnit:inst|ControlBus_o[5]  ; RALU:inst4|RON[4][0]              ; clk          ; clk         ; 0.000        ; 0.000      ; 0.898      ;
+; 0.746 ; ControlUnit:inst|ControlBus_o[5]  ; RALU:inst4|RON[4][1]              ; clk          ; clk         ; 0.000        ; 0.000      ; 0.898      ;
+; 0.746 ; ControlUnit:inst|ControlBus_o[5]  ; RALU:inst4|RON[4][2]              ; clk          ; clk         ; 0.000        ; 0.000      ; 0.898      ;
+; 0.746 ; ControlUnit:inst|ControlBus_o[5]  ; RALU:inst4|RON[4][3]              ; clk          ; clk         ; 0.000        ; 0.000      ; 0.898      ;
+; 0.747 ; ControlUnit:inst|p_counter[2]     ; ControlUnit:inst|ControlBus_o[0]  ; clk          ; clk         ; 0.000        ; 0.002      ; 0.901      ;
+; 0.748 ; ControlUnit:inst|p_counter[4]     ; ControlUnit:inst|p_counter[3]     ; clk          ; clk         ; 0.000        ; 0.000      ; 0.900      ;
+; 0.748 ; ControlUnit:inst|p_counter[4]     ; ControlUnit:inst|p_counter[0]     ; clk          ; clk         ; 0.000        ; 0.000      ; 0.900      ;
+; 0.749 ; ControlUnit:inst|p_counter[1]     ; ControlUnit:inst|ControlBus_o[12] ; clk          ; clk         ; 0.000        ; 0.002      ; 0.903      ;
+; 0.749 ; ControlUnit:inst|p_counter[4]     ; ControlUnit:inst|p_counter[5]     ; clk          ; clk         ; 0.000        ; 0.000      ; 0.901      ;
+; 0.757 ; ControlUnit:inst|ControlBus_o[12] ; RALU:inst4|RON[0][2]              ; clk          ; clk         ; 0.000        ; 0.000      ; 0.909      ;
+; 0.757 ; ControlUnit:inst|ControlBus_o[12] ; RALU:inst4|RON[1][2]              ; clk          ; clk         ; 0.000        ; 0.000      ; 0.909      ;
+; 0.757 ; ControlUnit:inst|p_counter[5]     ; ControlUnit:inst|p_counter[4]     ; clk          ; clk         ; 0.000        ; 0.000      ; 0.909      ;
+; 0.771 ; ControlUnit:inst|ControlBus_o[12] ; RALU:inst4|RON[3][2]              ; clk          ; clk         ; 0.000        ; -0.006     ; 0.917      ;
+; 0.774 ; ControlUnit:inst|ControlBus_o[12] ; RALU:inst4|RON[2][2]              ; clk          ; clk         ; 0.000        ; -0.006     ; 0.920      ;
+; 0.783 ; ControlUnit:inst|p_counter[3]     ; ControlUnit:inst|ControlBus_o[8]  ; clk          ; clk         ; 0.000        ; 0.002      ; 0.937      ;
+; 0.784 ; ControlUnit:inst|p_counter[0]     ; ControlUnit:inst|ControlBus_o[2]  ; clk          ; clk         ; 0.000        ; 0.002      ; 0.938      ;
+; 0.796 ; ControlUnit:inst|p_counter[5]     ; ControlUnit:inst|ControlBus_o[4]  ; clk          ; clk         ; 0.000        ; 0.001      ; 0.949      ;
+; 0.796 ; ControlUnit:inst|ControlBus_o[15] ; RALU:inst4|RON[0][0]              ; clk          ; clk         ; 0.000        ; 0.000      ; 0.948      ;
+; 0.797 ; ControlUnit:inst|p_counter[1]     ; ControlUnit:inst|ControlBus_o[8]  ; clk          ; clk         ; 0.000        ; 0.002      ; 0.951      ;
+; 0.798 ; ControlUnit:inst|p_counter[0]     ; ControlUnit:inst|p_counter[2]     ; clk          ; clk         ; 0.000        ; 0.000      ; 0.950      ;
+; 0.798 ; ControlUnit:inst|p_counter[2]     ; ControlUnit:inst|p_counter[4]     ; clk          ; clk         ; 0.000        ; 0.000      ; 0.950      ;
+; 0.800 ; RALU:inst4|RgA[3]                 ; FAP:inst2|inst1                   ; clk          ; clk         ; 0.000        ; 0.000      ; 0.952      ;
+; 0.804 ; ControlUnit:inst|p_counter[1]     ; ControlUnit:inst|p_counter[4]     ; clk          ; clk         ; 0.000        ; 0.000      ; 0.956      ;
+; 0.810 ; ControlUnit:inst|p_counter[0]     ; ControlUnit:inst|ControlBus_o[15] ; clk          ; clk         ; 0.000        ; 0.002      ; 0.964      ;
+; 0.812 ; ControlUnit:inst|p_counter[4]     ; ControlUnit:inst|ControlBus_o[14] ; clk          ; clk         ; 0.000        ; 0.002      ; 0.966      ;
+; 0.821 ; ControlUnit:inst|p_counter[3]     ; ControlUnit:inst|ControlBus_o[6]  ; clk          ; clk         ; 0.000        ; 0.001      ; 0.974      ;
+; 0.822 ; ControlUnit:inst|ControlBus_o[4]  ; RALU:inst4|RON[4][0]              ; clk          ; clk         ; 0.000        ; 0.000      ; 0.974      ;
+; 0.822 ; ControlUnit:inst|ControlBus_o[4]  ; RALU:inst4|RON[4][1]              ; clk          ; clk         ; 0.000        ; 0.000      ; 0.974      ;
+; 0.822 ; ControlUnit:inst|ControlBus_o[4]  ; RALU:inst4|RON[4][2]              ; clk          ; clk         ; 0.000        ; 0.000      ; 0.974      ;
+; 0.822 ; ControlUnit:inst|ControlBus_o[4]  ; RALU:inst4|RON[4][3]              ; clk          ; clk         ; 0.000        ; 0.000      ; 0.974      ;
++-------+-----------------------------------+-----------------------------------+--------------+-------------+--------------+------------+------------+
+
+
++--------------------------------------------------------------------------------------------------------------------+
+; Fast Model Minimum Pulse Width: 'clk'                                                                              ;
++--------+--------------+----------------+------------------+-------+------------+-----------------------------------+
+; Slack  ; Actual Width ; Required Width ; Type             ; Clock ; Clock Edge ; Target                            ;
++--------+--------------+----------------+------------------+-------+------------+-----------------------------------+
+; -1.380 ; 1.000        ; 2.380          ; Port Rate        ; clk   ; Rise       ; clk                               ;
+; -0.500 ; 0.500        ; 1.000          ; High Pulse Width ; clk   ; Rise       ; ControlUnit:inst|ControlBus_o[0]  ;
+; -0.500 ; 0.500        ; 1.000          ; Low Pulse Width  ; clk   ; Rise       ; ControlUnit:inst|ControlBus_o[0]  ;
+; -0.500 ; 0.500        ; 1.000          ; High Pulse Width ; clk   ; Rise       ; ControlUnit:inst|ControlBus_o[11] ;
+; -0.500 ; 0.500        ; 1.000          ; Low Pulse Width  ; clk   ; Rise       ; ControlUnit:inst|ControlBus_o[11] ;
+; -0.500 ; 0.500        ; 1.000          ; High Pulse Width ; clk   ; Rise       ; ControlUnit:inst|ControlBus_o[12] ;
+; -0.500 ; 0.500        ; 1.000          ; Low Pulse Width  ; clk   ; Rise       ; ControlUnit:inst|ControlBus_o[12] ;
+; -0.500 ; 0.500        ; 1.000          ; High Pulse Width ; clk   ; Rise       ; ControlUnit:inst|ControlBus_o[13] ;
+; -0.500 ; 0.500        ; 1.000          ; Low Pulse Width  ; clk   ; Rise       ; ControlUnit:inst|ControlBus_o[13] ;
+; -0.500 ; 0.500        ; 1.000          ; High Pulse Width ; clk   ; Rise       ; ControlUnit:inst|ControlBus_o[14] ;
+; -0.500 ; 0.500        ; 1.000          ; Low Pulse Width  ; clk   ; Rise       ; ControlUnit:inst|ControlBus_o[14] ;
+; -0.500 ; 0.500        ; 1.000          ; High Pulse Width ; clk   ; Rise       ; ControlUnit:inst|ControlBus_o[15] ;
+; -0.500 ; 0.500        ; 1.000          ; Low Pulse Width  ; clk   ; Rise       ; ControlUnit:inst|ControlBus_o[15] ;
+; -0.500 ; 0.500        ; 1.000          ; High Pulse Width ; clk   ; Rise       ; ControlUnit:inst|ControlBus_o[2]  ;
+; -0.500 ; 0.500        ; 1.000          ; Low Pulse Width  ; clk   ; Rise       ; ControlUnit:inst|ControlBus_o[2]  ;
+; -0.500 ; 0.500        ; 1.000          ; High Pulse Width ; clk   ; Rise       ; ControlUnit:inst|ControlBus_o[4]  ;
+; -0.500 ; 0.500        ; 1.000          ; Low Pulse Width  ; clk   ; Rise       ; ControlUnit:inst|ControlBus_o[4]  ;
+; -0.500 ; 0.500        ; 1.000          ; High Pulse Width ; clk   ; Rise       ; ControlUnit:inst|ControlBus_o[5]  ;
+; -0.500 ; 0.500        ; 1.000          ; Low Pulse Width  ; clk   ; Rise       ; ControlUnit:inst|ControlBus_o[5]  ;
+; -0.500 ; 0.500        ; 1.000          ; High Pulse Width ; clk   ; Rise       ; ControlUnit:inst|ControlBus_o[6]  ;
+; -0.500 ; 0.500        ; 1.000          ; Low Pulse Width  ; clk   ; Rise       ; ControlUnit:inst|ControlBus_o[6]  ;
+; -0.500 ; 0.500        ; 1.000          ; High Pulse Width ; clk   ; Rise       ; ControlUnit:inst|ControlBus_o[7]  ;
+; -0.500 ; 0.500        ; 1.000          ; Low Pulse Width  ; clk   ; Rise       ; ControlUnit:inst|ControlBus_o[7]  ;
+; -0.500 ; 0.500        ; 1.000          ; High Pulse Width ; clk   ; Rise       ; ControlUnit:inst|ControlBus_o[8]  ;
+; -0.500 ; 0.500        ; 1.000          ; Low Pulse Width  ; clk   ; Rise       ; ControlUnit:inst|ControlBus_o[8]  ;
+; -0.500 ; 0.500        ; 1.000          ; High Pulse Width ; clk   ; Rise       ; ControlUnit:inst|p_counter[0]     ;
+; -0.500 ; 0.500        ; 1.000          ; Low Pulse Width  ; clk   ; Rise       ; ControlUnit:inst|p_counter[0]     ;
+; -0.500 ; 0.500        ; 1.000          ; High Pulse Width ; clk   ; Rise       ; ControlUnit:inst|p_counter[1]     ;
+; -0.500 ; 0.500        ; 1.000          ; Low Pulse Width  ; clk   ; Rise       ; ControlUnit:inst|p_counter[1]     ;
+; -0.500 ; 0.500        ; 1.000          ; High Pulse Width ; clk   ; Rise       ; ControlUnit:inst|p_counter[2]     ;
+; -0.500 ; 0.500        ; 1.000          ; Low Pulse Width  ; clk   ; Rise       ; ControlUnit:inst|p_counter[2]     ;
+; -0.500 ; 0.500        ; 1.000          ; High Pulse Width ; clk   ; Rise       ; ControlUnit:inst|p_counter[3]     ;
+; -0.500 ; 0.500        ; 1.000          ; Low Pulse Width  ; clk   ; Rise       ; ControlUnit:inst|p_counter[3]     ;
+; -0.500 ; 0.500        ; 1.000          ; High Pulse Width ; clk   ; Rise       ; ControlUnit:inst|p_counter[4]     ;
+; -0.500 ; 0.500        ; 1.000          ; Low Pulse Width  ; clk   ; Rise       ; ControlUnit:inst|p_counter[4]     ;
+; -0.500 ; 0.500        ; 1.000          ; High Pulse Width ; clk   ; Rise       ; ControlUnit:inst|p_counter[5]     ;
+; -0.500 ; 0.500        ; 1.000          ; Low Pulse Width  ; clk   ; Rise       ; ControlUnit:inst|p_counter[5]     ;
+; -0.500 ; 0.500        ; 1.000          ; High Pulse Width ; clk   ; Rise       ; FAP:inst2|inst1                   ;
+; -0.500 ; 0.500        ; 1.000          ; Low Pulse Width  ; clk   ; Rise       ; FAP:inst2|inst1                   ;
+; -0.500 ; 0.500        ; 1.000          ; High Pulse Width ; clk   ; Rise       ; FAP:inst2|inst2                   ;
+; -0.500 ; 0.500        ; 1.000          ; Low Pulse Width  ; clk   ; Rise       ; FAP:inst2|inst2                   ;
+; -0.500 ; 0.500        ; 1.000          ; High Pulse Width ; clk   ; Rise       ; RALU:inst4|RON[0][0]              ;
+; -0.500 ; 0.500        ; 1.000          ; Low Pulse Width  ; clk   ; Rise       ; RALU:inst4|RON[0][0]              ;
+; -0.500 ; 0.500        ; 1.000          ; High Pulse Width ; clk   ; Rise       ; RALU:inst4|RON[0][1]              ;
+; -0.500 ; 0.500        ; 1.000          ; Low Pulse Width  ; clk   ; Rise       ; RALU:inst4|RON[0][1]              ;
+; -0.500 ; 0.500        ; 1.000          ; High Pulse Width ; clk   ; Rise       ; RALU:inst4|RON[0][2]              ;
+; -0.500 ; 0.500        ; 1.000          ; Low Pulse Width  ; clk   ; Rise       ; RALU:inst4|RON[0][2]              ;
+; -0.500 ; 0.500        ; 1.000          ; High Pulse Width ; clk   ; Rise       ; RALU:inst4|RON[0][3]              ;
+; -0.500 ; 0.500        ; 1.000          ; Low Pulse Width  ; clk   ; Rise       ; RALU:inst4|RON[0][3]              ;
+; -0.500 ; 0.500        ; 1.000          ; High Pulse Width ; clk   ; Rise       ; RALU:inst4|RON[1][0]              ;
+; -0.500 ; 0.500        ; 1.000          ; Low Pulse Width  ; clk   ; Rise       ; RALU:inst4|RON[1][0]              ;
+; -0.500 ; 0.500        ; 1.000          ; High Pulse Width ; clk   ; Rise       ; RALU:inst4|RON[1][1]              ;
+; -0.500 ; 0.500        ; 1.000          ; Low Pulse Width  ; clk   ; Rise       ; RALU:inst4|RON[1][1]              ;
+; -0.500 ; 0.500        ; 1.000          ; High Pulse Width ; clk   ; Rise       ; RALU:inst4|RON[1][2]              ;
+; -0.500 ; 0.500        ; 1.000          ; Low Pulse Width  ; clk   ; Rise       ; RALU:inst4|RON[1][2]              ;
+; -0.500 ; 0.500        ; 1.000          ; High Pulse Width ; clk   ; Rise       ; RALU:inst4|RON[1][3]              ;
+; -0.500 ; 0.500        ; 1.000          ; Low Pulse Width  ; clk   ; Rise       ; RALU:inst4|RON[1][3]              ;
+; -0.500 ; 0.500        ; 1.000          ; High Pulse Width ; clk   ; Rise       ; RALU:inst4|RON[2][0]              ;
+; -0.500 ; 0.500        ; 1.000          ; Low Pulse Width  ; clk   ; Rise       ; RALU:inst4|RON[2][0]              ;
+; -0.500 ; 0.500        ; 1.000          ; High Pulse Width ; clk   ; Rise       ; RALU:inst4|RON[2][1]              ;
+; -0.500 ; 0.500        ; 1.000          ; Low Pulse Width  ; clk   ; Rise       ; RALU:inst4|RON[2][1]              ;
+; -0.500 ; 0.500        ; 1.000          ; High Pulse Width ; clk   ; Rise       ; RALU:inst4|RON[2][2]              ;
+; -0.500 ; 0.500        ; 1.000          ; Low Pulse Width  ; clk   ; Rise       ; RALU:inst4|RON[2][2]              ;
+; -0.500 ; 0.500        ; 1.000          ; High Pulse Width ; clk   ; Rise       ; RALU:inst4|RON[2][3]              ;
+; -0.500 ; 0.500        ; 1.000          ; Low Pulse Width  ; clk   ; Rise       ; RALU:inst4|RON[2][3]              ;
+; -0.500 ; 0.500        ; 1.000          ; High Pulse Width ; clk   ; Rise       ; RALU:inst4|RON[3][0]              ;
+; -0.500 ; 0.500        ; 1.000          ; Low Pulse Width  ; clk   ; Rise       ; RALU:inst4|RON[3][0]              ;
+; -0.500 ; 0.500        ; 1.000          ; High Pulse Width ; clk   ; Rise       ; RALU:inst4|RON[3][1]              ;
+; -0.500 ; 0.500        ; 1.000          ; Low Pulse Width  ; clk   ; Rise       ; RALU:inst4|RON[3][1]              ;
+; -0.500 ; 0.500        ; 1.000          ; High Pulse Width ; clk   ; Rise       ; RALU:inst4|RON[3][2]              ;
+; -0.500 ; 0.500        ; 1.000          ; Low Pulse Width  ; clk   ; Rise       ; RALU:inst4|RON[3][2]              ;
+; -0.500 ; 0.500        ; 1.000          ; High Pulse Width ; clk   ; Rise       ; RALU:inst4|RON[3][3]              ;
+; -0.500 ; 0.500        ; 1.000          ; Low Pulse Width  ; clk   ; Rise       ; RALU:inst4|RON[3][3]              ;
+; -0.500 ; 0.500        ; 1.000          ; High Pulse Width ; clk   ; Rise       ; RALU:inst4|RON[4][0]              ;
+; -0.500 ; 0.500        ; 1.000          ; Low Pulse Width  ; clk   ; Rise       ; RALU:inst4|RON[4][0]              ;
+; -0.500 ; 0.500        ; 1.000          ; High Pulse Width ; clk   ; Rise       ; RALU:inst4|RON[4][1]              ;
+; -0.500 ; 0.500        ; 1.000          ; Low Pulse Width  ; clk   ; Rise       ; RALU:inst4|RON[4][1]              ;
+; -0.500 ; 0.500        ; 1.000          ; High Pulse Width ; clk   ; Rise       ; RALU:inst4|RON[4][2]              ;
+; -0.500 ; 0.500        ; 1.000          ; Low Pulse Width  ; clk   ; Rise       ; RALU:inst4|RON[4][2]              ;
+; -0.500 ; 0.500        ; 1.000          ; High Pulse Width ; clk   ; Rise       ; RALU:inst4|RON[4][3]              ;
+; -0.500 ; 0.500        ; 1.000          ; Low Pulse Width  ; clk   ; Rise       ; RALU:inst4|RON[4][3]              ;
+; -0.500 ; 0.500        ; 1.000          ; High Pulse Width ; clk   ; Rise       ; RALU:inst4|RON[5][0]              ;
+; -0.500 ; 0.500        ; 1.000          ; Low Pulse Width  ; clk   ; Rise       ; RALU:inst4|RON[5][0]              ;
+; -0.500 ; 0.500        ; 1.000          ; High Pulse Width ; clk   ; Rise       ; RALU:inst4|RON[5][1]              ;
+; -0.500 ; 0.500        ; 1.000          ; Low Pulse Width  ; clk   ; Rise       ; RALU:inst4|RON[5][1]              ;
+; -0.500 ; 0.500        ; 1.000          ; High Pulse Width ; clk   ; Rise       ; RALU:inst4|RON[5][2]              ;
+; -0.500 ; 0.500        ; 1.000          ; Low Pulse Width  ; clk   ; Rise       ; RALU:inst4|RON[5][2]              ;
+; -0.500 ; 0.500        ; 1.000          ; High Pulse Width ; clk   ; Rise       ; RALU:inst4|RON[5][3]              ;
+; -0.500 ; 0.500        ; 1.000          ; Low Pulse Width  ; clk   ; Rise       ; RALU:inst4|RON[5][3]              ;
+; -0.500 ; 0.500        ; 1.000          ; High Pulse Width ; clk   ; Rise       ; RALU:inst4|RON[6][0]              ;
+; -0.500 ; 0.500        ; 1.000          ; Low Pulse Width  ; clk   ; Rise       ; RALU:inst4|RON[6][0]              ;
+; -0.500 ; 0.500        ; 1.000          ; High Pulse Width ; clk   ; Rise       ; RALU:inst4|RON[6][1]              ;
+; -0.500 ; 0.500        ; 1.000          ; Low Pulse Width  ; clk   ; Rise       ; RALU:inst4|RON[6][1]              ;
+; -0.500 ; 0.500        ; 1.000          ; High Pulse Width ; clk   ; Rise       ; RALU:inst4|RON[6][2]              ;
+; -0.500 ; 0.500        ; 1.000          ; Low Pulse Width  ; clk   ; Rise       ; RALU:inst4|RON[6][2]              ;
+; -0.500 ; 0.500        ; 1.000          ; High Pulse Width ; clk   ; Rise       ; RALU:inst4|RON[6][3]              ;
+; -0.500 ; 0.500        ; 1.000          ; Low Pulse Width  ; clk   ; Rise       ; RALU:inst4|RON[6][3]              ;
+; -0.500 ; 0.500        ; 1.000          ; High Pulse Width ; clk   ; Rise       ; RALU:inst4|RON[7][0]              ;
+; -0.500 ; 0.500        ; 1.000          ; Low Pulse Width  ; clk   ; Rise       ; RALU:inst4|RON[7][0]              ;
+; -0.500 ; 0.500        ; 1.000          ; High Pulse Width ; clk   ; Rise       ; RALU:inst4|RON[7][1]              ;
++--------+--------------+----------------+------------------+-------+------------+-----------------------------------+
+
+
++--------------------------------------------------------------------------+
+; Setup Times                                                              ;
++------------+------------+--------+--------+------------+-----------------+
+; Data Port  ; Clock Port ; Rise   ; Fall   ; Clock Edge ; Clock Reference ;
++------------+------------+--------+--------+------------+-----------------+
+; DataIn[*]  ; clk        ; 2.033  ; 2.033  ; Rise       ; clk             ;
+;  DataIn[0] ; clk        ; 1.949  ; 1.949  ; Rise       ; clk             ;
+;  DataIn[1] ; clk        ; 2.007  ; 2.007  ; Rise       ; clk             ;
+;  DataIn[2] ; clk        ; 1.965  ; 1.965  ; Rise       ; clk             ;
+;  DataIn[3] ; clk        ; 2.033  ; 2.033  ; Rise       ; clk             ;
+; reset      ; clk        ; -0.162 ; -0.162 ; Rise       ; clk             ;
++------------+------------+--------+--------+------------+-----------------+
+
+
++--------------------------------------------------------------------------+
+; Hold Times                                                               ;
++------------+------------+--------+--------+------------+-----------------+
+; Data Port  ; Clock Port ; Rise   ; Fall   ; Clock Edge ; Clock Reference ;
++------------+------------+--------+--------+------------+-----------------+
+; DataIn[*]  ; clk        ; -1.829 ; -1.829 ; Rise       ; clk             ;
+;  DataIn[0] ; clk        ; -1.829 ; -1.829 ; Rise       ; clk             ;
+;  DataIn[1] ; clk        ; -1.887 ; -1.887 ; Rise       ; clk             ;
+;  DataIn[2] ; clk        ; -1.845 ; -1.845 ; Rise       ; clk             ;
+;  DataIn[3] ; clk        ; -1.913 ; -1.913 ; Rise       ; clk             ;
+; reset      ; clk        ; 0.498  ; 0.498  ; Rise       ; clk             ;
++------------+------------+--------+--------+------------+-----------------+
+
+
++-------------------------------------------------------------------------+
+; Clock to Output Times                                                   ;
++-------------+------------+-------+-------+------------+-----------------+
+; Data Port   ; Clock Port ; Rise  ; Fall  ; Clock Edge ; Clock Reference ;
++-------------+------------+-------+-------+------------+-----------------+
+; CarryFlag   ; clk        ; 4.221 ; 4.221 ; Rise       ; clk             ;
+; DataOut[*]  ; clk        ; 5.368 ; 5.368 ; Rise       ; clk             ;
+;  DataOut[0] ; clk        ; 4.983 ; 4.983 ; Rise       ; clk             ;
+;  DataOut[1] ; clk        ; 5.123 ; 5.123 ; Rise       ; clk             ;
+;  DataOut[2] ; clk        ; 5.272 ; 5.272 ; Rise       ; clk             ;
+;  DataOut[3] ; clk        ; 5.368 ; 5.368 ; Rise       ; clk             ;
+; PortID[*]   ; clk        ; 4.490 ; 4.490 ; Rise       ; clk             ;
+;  PortID[0]  ; clk        ; 4.352 ; 4.352 ; Rise       ; clk             ;
+;  PortID[1]  ; clk        ; 4.490 ; 4.490 ; Rise       ; clk             ;
+;  PortID[2]  ; clk        ; 4.222 ; 4.222 ; Rise       ; clk             ;
+; PortRead    ; clk        ; 4.408 ; 4.408 ; Rise       ; clk             ;
+; ZeroFlag    ; clk        ; 4.290 ; 4.290 ; Rise       ; clk             ;
++-------------+------------+-------+-------+------------+-----------------+
+
+
++-------------------------------------------------------------------------+
+; Minimum Clock to Output Times                                           ;
++-------------+------------+-------+-------+------------+-----------------+
+; Data Port   ; Clock Port ; Rise  ; Fall  ; Clock Edge ; Clock Reference ;
++-------------+------------+-------+-------+------------+-----------------+
+; CarryFlag   ; clk        ; 4.221 ; 4.221 ; Rise       ; clk             ;
+; DataOut[*]  ; clk        ; 4.648 ; 4.648 ; Rise       ; clk             ;
+;  DataOut[0] ; clk        ; 4.746 ; 4.746 ; Rise       ; clk             ;
+;  DataOut[1] ; clk        ; 4.809 ; 4.809 ; Rise       ; clk             ;
+;  DataOut[2] ; clk        ; 4.650 ; 4.650 ; Rise       ; clk             ;
+;  DataOut[3] ; clk        ; 4.648 ; 4.648 ; Rise       ; clk             ;
+; PortID[*]   ; clk        ; 4.222 ; 4.222 ; Rise       ; clk             ;
+;  PortID[0]  ; clk        ; 4.352 ; 4.352 ; Rise       ; clk             ;
+;  PortID[1]  ; clk        ; 4.490 ; 4.490 ; Rise       ; clk             ;
+;  PortID[2]  ; clk        ; 4.222 ; 4.222 ; Rise       ; clk             ;
+; PortRead    ; clk        ; 4.277 ; 4.277 ; Rise       ; clk             ;
+; ZeroFlag    ; clk        ; 4.290 ; 4.290 ; Rise       ; clk             ;
++-------------+------------+-------+-------+------------+-----------------+
+
+
++--------------------------------------------------------------------------------+
+; Multicorner Timing Analysis Summary                                            ;
++------------------+----------+-------+----------+---------+---------------------+
+; Clock            ; Setup    ; Hold  ; Recovery ; Removal ; Minimum Pulse Width ;
++------------------+----------+-------+----------+---------+---------------------+
+; Worst-case Slack ; -3.767   ; 0.477 ; N/A      ; N/A     ; -1.631              ;
+;  clk             ; -3.767   ; 0.477 ; N/A      ; N/A     ; -1.631              ;
+; Design-wide TNS  ; -173.233 ; 0.0   ; 0.0      ; 0.0     ; -74.951             ;
+;  clk             ; -173.233 ; 0.000 ; N/A      ; N/A     ; -74.951             ;
++------------------+----------+-------+----------+---------+---------------------+
+
+
++------------------------------------------------------------------------+
+; Setup Times                                                            ;
++------------+------------+-------+-------+------------+-----------------+
+; Data Port  ; Clock Port ; Rise  ; Fall  ; Clock Edge ; Clock Reference ;
++------------+------------+-------+-------+------------+-----------------+
+; DataIn[*]  ; clk        ; 4.469 ; 4.469 ; Rise       ; clk             ;
+;  DataIn[0] ; clk        ; 4.328 ; 4.328 ; Rise       ; clk             ;
+;  DataIn[1] ; clk        ; 4.411 ; 4.411 ; Rise       ; clk             ;
+;  DataIn[2] ; clk        ; 4.234 ; 4.234 ; Rise       ; clk             ;
+;  DataIn[3] ; clk        ; 4.469 ; 4.469 ; Rise       ; clk             ;
+; reset      ; clk        ; 0.708 ; 0.708 ; Rise       ; clk             ;
++------------+------------+-------+-------+------------+-----------------+
+
+
++--------------------------------------------------------------------------+
+; Hold Times                                                               ;
++------------+------------+--------+--------+------------+-----------------+
+; Data Port  ; Clock Port ; Rise   ; Fall   ; Clock Edge ; Clock Reference ;
++------------+------------+--------+--------+------------+-----------------+
+; DataIn[*]  ; clk        ; -1.829 ; -1.829 ; Rise       ; clk             ;
+;  DataIn[0] ; clk        ; -1.829 ; -1.829 ; Rise       ; clk             ;
+;  DataIn[1] ; clk        ; -1.887 ; -1.887 ; Rise       ; clk             ;
+;  DataIn[2] ; clk        ; -1.845 ; -1.845 ; Rise       ; clk             ;
+;  DataIn[3] ; clk        ; -1.913 ; -1.913 ; Rise       ; clk             ;
+; reset      ; clk        ; 0.498  ; 0.498  ; Rise       ; clk             ;
++------------+------------+--------+--------+------------+-----------------+
+
+
++---------------------------------------------------------------------------+
+; Clock to Output Times                                                     ;
++-------------+------------+--------+--------+------------+-----------------+
+; Data Port   ; Clock Port ; Rise   ; Fall   ; Clock Edge ; Clock Reference ;
++-------------+------------+--------+--------+------------+-----------------+
+; CarryFlag   ; clk        ; 7.984  ; 7.984  ; Rise       ; clk             ;
+; DataOut[*]  ; clk        ; 11.188 ; 11.188 ; Rise       ; clk             ;
+;  DataOut[0] ; clk        ; 10.063 ; 10.063 ; Rise       ; clk             ;
+;  DataOut[1] ; clk        ; 10.433 ; 10.433 ; Rise       ; clk             ;
+;  DataOut[2] ; clk        ; 10.945 ; 10.945 ; Rise       ; clk             ;
+;  DataOut[3] ; clk        ; 11.188 ; 11.188 ; Rise       ; clk             ;
+; PortID[*]   ; clk        ; 8.639  ; 8.639  ; Rise       ; clk             ;
+;  PortID[0]  ; clk        ; 8.286  ; 8.286  ; Rise       ; clk             ;
+;  PortID[1]  ; clk        ; 8.639  ; 8.639  ; Rise       ; clk             ;
+;  PortID[2]  ; clk        ; 7.982  ; 7.982  ; Rise       ; clk             ;
+; PortRead    ; clk        ; 8.496  ; 8.496  ; Rise       ; clk             ;
+; ZeroFlag    ; clk        ; 8.228  ; 8.228  ; Rise       ; clk             ;
++-------------+------------+--------+--------+------------+-----------------+
+
+
++-------------------------------------------------------------------------+
+; Minimum Clock to Output Times                                           ;
++-------------+------------+-------+-------+------------+-----------------+
+; Data Port   ; Clock Port ; Rise  ; Fall  ; Clock Edge ; Clock Reference ;
++-------------+------------+-------+-------+------------+-----------------+
+; CarryFlag   ; clk        ; 4.221 ; 4.221 ; Rise       ; clk             ;
+; DataOut[*]  ; clk        ; 4.648 ; 4.648 ; Rise       ; clk             ;
+;  DataOut[0] ; clk        ; 4.746 ; 4.746 ; Rise       ; clk             ;
+;  DataOut[1] ; clk        ; 4.809 ; 4.809 ; Rise       ; clk             ;
+;  DataOut[2] ; clk        ; 4.650 ; 4.650 ; Rise       ; clk             ;
+;  DataOut[3] ; clk        ; 4.648 ; 4.648 ; Rise       ; clk             ;
+; PortID[*]   ; clk        ; 4.222 ; 4.222 ; Rise       ; clk             ;
+;  PortID[0]  ; clk        ; 4.352 ; 4.352 ; Rise       ; clk             ;
+;  PortID[1]  ; clk        ; 4.490 ; 4.490 ; Rise       ; clk             ;
+;  PortID[2]  ; clk        ; 4.222 ; 4.222 ; Rise       ; clk             ;
+; PortRead    ; clk        ; 4.277 ; 4.277 ; Rise       ; clk             ;
+; ZeroFlag    ; clk        ; 4.290 ; 4.290 ; Rise       ; clk             ;
++-------------+------------+-------+-------+------------+-----------------+
+
+
++-------------------------------------------------------------------+
+; Setup Transfers                                                   ;
++------------+----------+----------+----------+----------+----------+
+; From Clock ; To Clock ; RR Paths ; FR Paths ; RF Paths ; FF Paths ;
++------------+----------+----------+----------+----------+----------+
+; clk        ; clk      ; 1422     ; 0        ; 0        ; 0        ;
++------------+----------+----------+----------+----------+----------+
+Entries labeled "false path" only account for clock-to-clock false paths and not path-based false paths. As a result, actual path counts may be lower than reported.
+
+
++-------------------------------------------------------------------+
+; Hold Transfers                                                    ;
++------------+----------+----------+----------+----------+----------+
+; From Clock ; To Clock ; RR Paths ; FR Paths ; RF Paths ; FF Paths ;
++------------+----------+----------+----------+----------+----------+
+; clk        ; clk      ; 1422     ; 0        ; 0        ; 0        ;
++------------+----------+----------+----------+----------+----------+
+Entries labeled "false path" only account for clock-to-clock false paths and not path-based false paths. As a result, actual path counts may be lower than reported.
+
+
+---------------
+; Report TCCS ;
+---------------
+No dedicated SERDES Transmitter circuitry present in device or used in design
+
+
+---------------
+; Report RSKM ;
+---------------
+No dedicated SERDES Receiver circuitry present in device or used in design
+
+
++------------------------------------------------+
+; Unconstrained Paths                            ;
++---------------------------------+-------+------+
+; Property                        ; Setup ; Hold ;
++---------------------------------+-------+------+
+; Illegal Clocks                  ; 0     ; 0    ;
+; Unconstrained Clocks            ; 0     ; 0    ;
+; Unconstrained Input Ports       ; 5     ; 5    ;
+; Unconstrained Input Port Paths  ; 64    ; 64   ;
+; Unconstrained Output Ports      ; 10    ; 10   ;
+; Unconstrained Output Port Paths ; 47    ; 47   ;
++---------------------------------+-------+------+
+
+
++------------------------------------+
+; TimeQuest Timing Analyzer Messages ;
++------------------------------------+
+Info: *******************************************************************
+Info: Running Quartus II 64-Bit TimeQuest Timing Analyzer
+    Info: Version 13.0.1 Build 232 06/12/2013 Service Pack 1 SJ Web Edition
+    Info: Processing started: Sat Nov 21 14:28:41 2020
+Info: Command: quartus_sta mpsis_shokiri_2 -c mpsis_shokiri_2
+Info: qsta_default_script.tcl version: #1
+Warning (20028): Parallel compilation is not licensed and has been disabled
+Info (21077): Low junction temperature is 0 degrees C
+Info (21077): High junction temperature is 85 degrees C
+Critical Warning (332012): Synopsys Design Constraints File file not found: 'mpsis_shokiri_2.sdc'. A Synopsys Design Constraints File is required by the TimeQuest Timing Analyzer to get proper timing constraints. Without it, the Compiler will not properly optimize the design.
+Info (332142): No user constrained base clocks found in the design. Calling "derive_clocks -period 1.0"
+Info (332105): Deriving Clocks
+    Info (332105): create_clock -period 1.000 -name clk clk
+Info: Found TIMEQUEST_REPORT_SCRIPT_INCLUDE_DEFAULT_ANALYSIS = ON
+Info: Analyzing Slow Model
+Critical Warning (332148): Timing requirements not met
+Info (332146): Worst-case setup slack is -3.767
+    Info (332119):     Slack End Point TNS Clock 
+    Info (332119): ========= ============= =====================
+    Info (332119):    -3.767      -173.233 clk 
+Info (332146): Worst-case hold slack is 1.061
+    Info (332119):     Slack End Point TNS Clock 
+    Info (332119): ========= ============= =====================
+    Info (332119):     1.061         0.000 clk 
+Info (332140): No Recovery paths to report
+Info (332140): No Removal paths to report
+Info (332146): Worst-case minimum pulse width slack is -1.631
+    Info (332119):     Slack End Point TNS Clock 
+    Info (332119): ========= ============= =====================
+    Info (332119):    -1.631       -74.951 clk 
+Info (332001): The selected device family is not supported by the report_metastability command.
+Info: Analyzing Fast Model
+Critical Warning (332148): Timing requirements not met
+Info (332146): Worst-case setup slack is -0.787
+    Info (332119):     Slack End Point TNS Clock 
+    Info (332119): ========= ============= =====================
+    Info (332119):    -0.787       -28.710 clk 
+Info (332146): Worst-case hold slack is 0.477
+    Info (332119):     Slack End Point TNS Clock 
+    Info (332119): ========= ============= =====================
+    Info (332119):     0.477         0.000 clk 
+Info (332140): No Recovery paths to report
+Info (332140): No Removal paths to report
+Info (332146): Worst-case minimum pulse width slack is -1.380
+    Info (332119):     Slack End Point TNS Clock 
+    Info (332119): ========= ============= =====================
+    Info (332119):    -1.380       -61.380 clk 
+Info (332001): The selected device family is not supported by the report_metastability command.
+Info (332102): Design is not fully constrained for setup requirements
+Info (332102): Design is not fully constrained for hold requirements
+Info: Quartus II 64-Bit TimeQuest Timing Analyzer was successful. 0 errors, 4 warnings
+    Info: Peak virtual memory: 395 megabytes
+    Info: Processing ended: Sat Nov 21 14:28:42 2020
+    Info: Elapsed time: 00:00:01
+    Info: Total CPU time (on all processors): 00:00:01
+
+

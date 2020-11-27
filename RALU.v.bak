@@ -1,0 +1,38 @@
+module RALU(
+			input 			clk_i,
+			input 			rst_i,
+			input  [3:0] 	Data_i,
+			input  [3:0] 	S_i,
+			input 			M_i,
+			input 			P0_i,
+			input 			A_i,
+			input  [3:0]	v_i,
+			input 			wr_i,
+			input  [2:0] 	adr_i,
+			input 			ISR_i,
+			input 			ISL_i,
+			
+			output 			OSR_o,
+			output 			OSL_o,
+			output 			P4_o,
+			output [3:0]	R_o
+			);
+			
+reg [3:0] ron;
+reg [3:0] RgA;
+reg [3:0] RgB;
+reg [4:1] P;
+
+ALU_ParallelCarry ALU(
+	.A	( RgA  ),						
+	.B	( RgB  ),
+	.S	( S_i  ),
+	.M	( M_i  )
+	.P0( P0_i ),
+	.R	( R_o  ),
+	.P	( P    )
+);
+	
+	
+	
+endmodule

@@ -1,0 +1,13 @@
+module SM (a, b, S, M, Pin, R, D, F, Pout);
+
+input 		 a, b, M, Pin;
+input [3:0]  S;
+output 		 R, D, F, Pout;
+
+assign D = S[3] & a & b | S[2] & a & (~b)
+assign F = a | S[1] & a & (~b) | S[0] & b)
+assign R = F ^ D ^ M & Pin
+
+assign Pout = D | F&Pin 
+
+endmodule
